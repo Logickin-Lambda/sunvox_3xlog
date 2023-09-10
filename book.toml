@@ -1,0 +1,6 @@
+[book]
+authors = ["Logickin"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Logickin's Logical Logbook"
