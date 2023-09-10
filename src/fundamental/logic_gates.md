@@ -8,5 +8,151 @@ Fundamentally, every computers are made with some kind of logic gates, which is 
 
 Without mentioning what is a Binary and Truth Table, it is meaningless to teach the following since they are the vital concept and figures to show how logic gates work. 
 
-Computers don't calculates math like us, using the decimal number system; under the hood, they are just all low state or high state; some call it 0s or 1s; some call it true or false, and they are all describe the same thing, the binary signal. For now, let we use 0 for no DC signal, while 1 for DC signal with +128 DC offset in amplifiers.
+Computers don't calculates math like us, using the decimal number system; under the hood, they are just all low state or high state; some call it 0s or 1s; some call it true or false, and they all describe the same thing, the binary signal. For now, let we use 0 for no DC signal, while 1 for DC signal with +128 DC offset in amplifiers.
 
+In Digital Logic, we also have an useful diagram, called the truth table, to show how a logical component behavies under certain inputs. For example:
+
+<left>
+
+| IN A | IN B | OUT  |
+|------|------|------|
+| 0    | 0    | 0    |
+| 0    | 1    | 0    |
+| 1    | 0    | 0    |
+| 1    | 1    | 1    |
+
+</left>
+
+This table shows how **AND gate** works by flicking the input one by one, with all of the combinations, so this clearly tells the **AND gate** only switches on when both input is on.
+
+That's about the truth table, let's talk the three ~~seekers~~ basic logic gates.
+
+## AND Gate
+
+The first one is an **AND gate**. You must switch on both of the input to set the output on, the following is the truth table and the simulation of the AND gate.  
+
+Truth table:
+
+| IN A | IN B | OUT  |
+|------|------|------|
+| 0    | 0    | 0    |
+| 0    | 1    | 0    |
+| 1    | 0    | 0    |
+| 1    | 1    | 1    |
+
+Simulation:
+
+<object data="../apps/circuitjs/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxAUgoqoQFMBaMMAKABlxiUQAWMQ8Cjy9+UMQDMAhgBsAznWqR2nbjx7CwQ3urFUpchUiVhKK3tm4WqPC2O60W-S2nOqdN7twAmdKQFdpABcGaTovcF0oWFYAc21hD148a1sqJSA" width="100%" height="500vh"></object>
+
+To build an AND gate in SunVox, all you needed is a modulator and... that's it, since you can consider AND operation is like a multiplication. If either one of your input has a Zero, the product must be resulted in Zero; otherwise, you will get an one if both of your input are one. 
+
+![and gate](../images/logic_gates/and_gate.png)
+
+Despite being a single module, I tend to change the color to blue and name it AND/Transistor to reflect the purpose of the module. There is a difference between two, AND is when both of the input are binary (0/+128), while Transistor can have one of the input in any magnitude just like how real life amplifier increase the gain of a incoming analog signal by changing the gate voltage.
+
+![and gate final](../images/logic_gates/and_gate_final.png)
+
+## OR Gate
+
+The second commonly used logic gate is OR gate. The output is on as long as you have switched on at least one input. It seems that OR gate is quite useless at first glance, since you can set the output to 1 if any one of them are 1, but it is useful for making multiplexer or grouping control signal. Here is the table and the simulation:
+
+Truth table:
+
+| IN A | IN B | OUT  |
+|------|------|------|
+| 0    | 0    | 0    |
+| 0    | 1    | 1    |
+| 1    | 0    | 1    |
+| 1    | 1    | 1    |
+
+Simulation:
+
+<object data="../apps/circuitjs/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxAUgoqoQFMBaMMAKABlxiUQAWMQ8Cjy9+UMQDMAhgBsAznWqR2nbjx7CwQ3urFUpchUiX9u2NLzPbhPS9wAmdKQFdpAFwbS6d8LqixWAOZWFqp4VDbcVMYI3GBcISBm4ZZUkRQsQA" width="100%" height="500vh"></object>
+
+Building an OR gate is as simple as an AND gate, but you need a distortion instead.
+
+![or gate](../images/logic_gates/or_gate.png)
+
+After that, you need to change the following controller in the distortion as shown:
+
+| Controller    | Values |
+|---------------|--------| 
+| Volume        | 256    |
+| Bit depth     | 2      |
+
+Once you have done right, the distortion will always regulate the signal into constant +128 DC, if you switch on at least one of the input. Normally, I prefer to change the color of the OR gate into purple:
+
+![or gate final](../images/logic_gates/or_gate_final.png)
+
+
+## NOT Gate
+
+The third of the trine is a NOT gate, also known as an inverter. Unlike AND or OR gate, it only has one input. It is useful to create common structure like decoders, conditional checking, or simply to invert the output signal. 
+
+Truth table:
+
+| IN A | OUT  |
+|------|------|
+| 0    | 1    |
+| 1    | 0    |
+
+Simulation:
+
+<object data="../apps/circuitjs/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxAUgoqoQFMBaMMAKABlxiUQAWbbsCjy9+UMQDMAhgBsAznWqQWYQt35U+3Hj2GaQ3ACZ0pAV2kAXBtLoHwYqjEisA5rx0iteDaIcsAkpxaouoe9tBICCxAA" width="100%" height="500vh"></object>
+
+Building an inverter is also easy, you only need a single amplifier.
+
+![not gate](../images/logic_gates/not_gate.png)
+
+Despite having such a simple structure, there are two variants in NOT gates. The following is the settings for the amplifier:
+
+The first type is a non-inverted NOT gate, where the input signal is a +128 DC offset: 
+
+| Controller    | Values |
+|---------------|--------| 
+| DC Offset     | -128   |
+| Absolute      | ON     |
+
+
+Another type of inverted NOT gate, where it takes negative 128 DC offset as input, which is commonly used in zero detection.
+
+| Controller    | Values |
+|---------------|--------| 
+| DC Offset     | +128   |
+| Absolute      | ON     |
+
+
+I generally prefer NOT gates in red color.
+
+![not gate final](../images/logic_gates/not_gate_final.png)
+
+## NAND and NOR Gate
+
+Despite not common in SunVox, Nand and Nor gate are worth a mention. They are known as universal gates, meaning that their properties can emulate all other logic gates. Universal gates are common in real world digital circuits, due to its properties able to simplify the design. To make such gate, all you need is to attach a not gate after the output of the And/Or gate. Nonetheless, they required one more module to implement, so they are not frequently used in SunVox.
+
+Truth table and simulation of a NOR gate:
+
+| IN A | IN B | OUT  |
+|------|------|------|
+| 0    | 0    | 1    |
+| 0    | 1    | 0    |
+| 1    | 0    | 0    |
+| 1    | 1    | 0    |
+
+<object data="../apps/circuitjs/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxAUgoqoQFMBaMMAKABlxiUQAWMQ8Cjy9+UMQDMAhgBsAznWqR2nbjx7CwQ3urFUpchUiX9u2NLzPbhPS9wAmdKQFdpAFwbS6d8LqixWAOZWFqp4VDbcVMYI2CohIGbhllSq0KTpGZnEFCxAA" width="100%" height="500vh"></object>
+
+
+And a NAND gate:
+
+| IN A | IN B | OUT  |
+|------|------|------|
+| 0    | 0    | 1    |
+| 0    | 1    | 1    |
+| 1    | 0    | 1    |
+| 1    | 1    | 0    |
+
+<object data="../apps/circuitjs/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxAUgoqoQFMBaMMAKABlxiUQAWMQ8Cjy9+UMQDMAhgBsAznWqR2nbjx7CwQ3urFUpchUiX9u2NLzPbhPS9wAmdKQFdpAFwbS6d8LqixWAOZWFqp4VDbcVMYIEGBcISBm4ZZUqtCkGZlZxBQsQA" width="100%" height="500vh"></object>
+
+As you can see, you can emulate any logic gate using NOR Gate only:
+
+<object data="../apps/circuitjs/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxAUgoqoQFMBaMMAKABkQmU8QAWQ3pzDEUfAVAkAzAIYAbAM51qkdkO4V1TERp5UqMhUqQqwhUc1EIw5jIQrWQogCZ0ZAV1kAXBrLpPwEnqwrADm4Lb2omg8VqJ6LGAI2Go8vHhUTHZpeo7UCAlJErHgDsVUcRQFyVwxvIKZFHUSlpUA7kJZ6RK8xHYq7Q0ITbTq-Sli9dapvVAsA1M64wiE8YnJVNh4ghYgm4LlRVXjex27W815LGFgESfRZ-uzpuYOJzd2dyAu7l4+fgE5GCQVgcGp8OBCbS8CE5AyKZSqMHYQg8LSiZG6KRyeHGOanE4bFGzeYfc5UaHxeYObioma4fZ4pjUvC0uyYOKInY0yFRFmBEBwoxPMx8Hjc96OPnOVzSDzeXz+CCA4JXcJsqX4SWYkyFBgzblpLUXXjQUhm80W4iVAAe4AQURIjkgyXZfEcggAcgB5AAqLFtiStyKQwkEGLdKEEXoASv67RA0la0MkeqJBJGQABBD0AERYQA" width="100%" height="500vh"></object><br><br>

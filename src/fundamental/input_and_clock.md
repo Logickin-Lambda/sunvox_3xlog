@@ -51,7 +51,7 @@ Click the edit button of the metamodule, and add an amplifier inside the metamod
 
 ![notey](../images/module_flows/sources/advance_source2.png)
 
-Once you have that amplifier, create a pattern with a length of two. Then set the automation as the following:
+Once you have that amplifier, create a pattern with a length of two. Then set the automation as the following which it changes the DC signal of the module:
 
 ![notey](../images/module_flows/sources/advance_source3.png)
 
