@@ -6,9 +6,9 @@ SunVox can be quite chaotic based on your practice, and no one can prevent you f
 
 Of course, you can build your logic thingies without ~~noties~~ organizing or planning, and in fact, I did this once with my pong module. 
 
-![The Internal of My Pong Module](../images/module_flows/the_messy_pon_module.png)
+![The Internal of My Pong Module](../images/module_flows/the_messy_pong_module.png)
 
-This module is really messy, and there are overlapped modules and connections everywhere; as a result, I couldn't able make any update with this module. Hence, like writing your normal python or c program, "Coding Practice" is also existed in SunVox if you consider it is a visual programming language just like Reaktor or Pure Data.
+This module is really messy, and overlapped modules and connections are everywhere; as a result, I couldn't able make any update with this module. Hence, like writing your normal python or c program, "Coding Practice" is also existed in SunVox if you consider it is a visual programming language just like Reaktor or Pure Data.
 
 ## Module Flow Direction
 Unlike Rick and Morty, you don't need a [high IQ](https://knowyourmeme.com/memes/to-be-fair-you-have-to-have-a-very-high-iq-to-understand-rick-and-morty) to understand the module direction in SunVox although it looks subtle. You can see the brightness of the line, which the brighter side is the sender, while the darker side is the receiver. 
