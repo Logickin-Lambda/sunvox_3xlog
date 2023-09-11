@@ -49,17 +49,17 @@ These 6 modules are already able to make SunVox turing complete. You can use the
 
 If you are a [mindustry](https://mindustrygame.github.io/) player, you know there is a component called the [Router](https://youtu.be/6zoRd5ACaBc?si=E_YH5bNjN30RNEx1&t=194). The routers play in a crucial role where the items need to be distributed in multiple conveyor belts; however, if you chain the routers, they pass the item back to the previous router, clogging the whole system resulting in a lower efficiency. 
 
-The reason why I point out mindustry because Feedback modules is similar to Routers, which is a necessary evil; you have to use it when you want to form a feedback loop in your system for building a stateful system, but the module itself has a 20ms delay, so you can't chain too many of them; otherwise, your logic circult will be high in latency. You have to use at least one pair of them at best, so normally your contraption will never soar beyond 50Hz. **Use it wisely**
+The reason why I point out mindustry because Feedback modules is similar to Routers, which is a necessary evil; you have to use it when you want to form a feedback loop in your system for building a stateful system, but the module itself has a 20ms delay, so you can't chain too many of them; otherwise, your logic circuit will be high in latency. You have to use at least one pair of them at best, so normally your contraption will never soar beyond 50Hz. **Use it wisely**
 
 ## Soundtctl
 ![Soundtctl](../images/basic_modules/Sound2Ctl.png)
 
-This module converts your incoming audio signal into control signal. Although it doesn't offer audio rate performance, it is a great module if you want more than two inputs for your specific modules (e.g. 16 Ram with indexing and enables), so you can reserve the audio input for time critical parameters like clock signal or data bus.
+This module converts your incoming audio signal into control signal. Although it doesn't offer audio rate performance, it is a great module if you want more than two inputs for your specific modules (e.g. 16 bit Ram bank with indexing and enables), so you can reserve the audio input for time critical parameters like clock signal or data bus.
 
 ## Multisynth
 ![Multisynth](../images/basic_modules/MultiSynth.png)
 
-Multisynth duplicates midi signal to the adjcient output modules, but it is not useful on its own if we talk about logic processing, unless you pair it with the following:
+Multisynth duplicates midi signal to the ancient output modules, but it is not useful on its own if we talk about logic processing, unless you pair it with the following:
 
 ## Velocity2ctl
 ![Vel2ctl](../images/basic_modules/Velocity2Ctl.png)
@@ -83,4 +83,4 @@ The [Inception](https://www.youtube.com/watch?v=c0Gvwo6yyyA) of SunVox. This ove
 There are lot of applications for metamodules. At first, you can use it to simplify the structure of your logic machine, making it more readable. You can reuse the metamodule by copy and paste, so you can scale a project easily with the commonly used logic. Another use for metamodule is to build a source block, that you can enable project play back to simulate input switch and clock. If this module didn't exist in the first place, VOXCOM 1610 and pong would not exist.
 
 ## Conclusion
-The rule of the modules above makes SunVox turing complete. In theroy, you can compute anything only with these module, if you give it enough time and memory. Obviously, there are many more modules in my computer project; I will introduces them in the later section when they are needed.
+The rule of the modules above makes SunVox turing complete. In theory, you can compute anything only with these module, if you give it enough time and memory. Obviously, there are many more modules in my computer project; I will introduces them in the later section when they are needed.
