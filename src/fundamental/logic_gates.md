@@ -69,11 +69,9 @@ Simulation:
 
 <object data="../apps/circuitjs/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxAUgoqoQFMBaMMAKABlxiUQAWMQ8Cjy9+UMQDMAhgBsAznWqR2nbjx7CwQ3urFUpchUiX9u2NLzPbhPS9wAmdKQFdpAFwbS6d8LqixWAOZWFqp4VDbcVMYI3GBcISBm4ZZUkRQsQA" width="100%" height="500vh"></object>
 
-Building an OR gate is as simple as an AND gate, but you need a distortion instead.
+Building an OR gate is as simple as an AND gate, but you need a distortion instead, and setting the distortion as shown:
 
 ![or gate](../images/logic_gates/or_gate.png)
-
-After that, you need to change the following controller in the distortion as shown:
 
 | Controller    | Values |
 |---------------|--------| 
@@ -87,7 +85,7 @@ Once you have done right, the distortion will always regulate the signal into co
 
 ## NOT Gate
 
-The third of the trine is a NOT gate, also known as an inverter. Unlike AND or OR gate, it only has one input. It is useful to create common structure like decoders, conditional checking, or simply to invert the output signal. 
+The third of the trine is a **NOT gate**, also known as an inverter. Unlike AND or OR gate, it only has one input. It is useful to create common structure like decoders, conditional checking, or simply to invert the output signal. 
 
 Truth table:
 
@@ -104,7 +102,7 @@ Building an inverter is also easy, you only need a single amplifier.
 
 ![not gate](../images/logic_gates/not_gate.png)
 
-Despite having such a simple structure, there are two variants in NOT gates. The following is the settings for the amplifier:
+Despite having such a simple structure, there are two variants in NOT gates; depends on the type of application, you may set your amplifier into one of the configurations:
 
 The first type is a non-inverted NOT gate, where the input signal is a +128 DC offset: 
 
@@ -128,7 +126,7 @@ I generally prefer NOT gates in red color.
 
 ## NAND and NOR Gate
 
-Despite not common in SunVox, Nand and Nor gate are worth a mention. They are known as universal gates, meaning that their properties can emulate all other logic gates. Universal gates are common in real world digital circuits, due to its properties able to simplify the design. To make such gate, all you need is to attach a not gate after the output of the And/Or gate. Nonetheless, they required one more module to implement, so they are not frequently used in SunVox.
+Despite not common in SunVox, **Nand and Nor gate** are worth a mention. They are known as universal gates, meaning that their properties can emulate all other logic gates. Universal gates are common in real world digital circuits, due to its properties able to simplify the design. To make such gate, all you need is to attach a not gate after the output of the **AND/OR Gate**. Nonetheless, they required one more module to implement, so they are not frequently used in SunVox.
 
 Truth table and simulation of a NOR gate:
 
@@ -153,6 +151,37 @@ And a NAND gate:
 
 <object data="../apps/circuitjs/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxAUgoqoQFMBaMMAKABlxiUQAWMQ8Cjy9+UMQDMAhgBsAznWqR2nbjx7CwQ3urFUpchUiX9u2NLzPbhPS9wAmdKQFdpAFwbS6d8LqixWAOZWFqp4VDbcVMYIEGBcISBm4ZZUqtCkGZlZxBQsQA" width="100%" height="500vh"></object>
 
-As you can see, you can emulate any logic gate using NOR Gate only:
+As you can see, you can emulate any logic gate using NOR Gate only, due to its property of being a universal gate:
 
 <object data="../apps/circuitjs/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxAUgoqoQFMBaMMAKABkQmU8QAWQ3pzDEUfAVAkAzAIYAbAM51qkdkO4V1TERp5UqMhUqQqwhUc1EIw5jIQrWQogCZ0ZAV1kAXBrLpPwEnqwrADm4Lb2omg8VqJ6LGAI2Go8vHhUTHZpeo7UCAlJErHgDsVUcRQFyVwxvIKZFHUSlpUA7kJZ6RK8xHYq7Q0ITbTq-Sli9dapvVAsA1M64wiE8YnJVNh4ghYgm4LlRVXjex27W815LGFgESfRZ-uzpuYOJzd2dyAu7l4+fgE5GCQVgcGp8OBCbS8CE5AyKZSqMHYQg8LSiZG6KRyeHGOanE4bFGzeYfc5UaHxeYObioma4fZ4pjUvC0uyYOKInY0yFRFmBEBwoxPMx8Hjc96OPnOVzSDzeXz+CCA4JXcJsqX4SWYkyFBgzblpLUXXjQUhm80W4iVAAe4AQURIjkgyXZfEcggAcgB5AAqLFtiStyKQwkEGLdKEEXoASv67RA0la0MkeqJBJGQABBD0AERYQA" width="100%" height="500vh"></object><br><br>
+
+## NAND and NOR Gate
+
+I used to planned to build a XOR gate as my first question as my SunVox Logic Riddle, because it is a bit complicated compared to all other gates. How XOR gates works is similar to OR gates which the output stay on if one of the input is on; however, when both of the output is on, the output is off:
+
+Truth Table:
+
+| IN A | IN B | OUT  |
+|------|------|------|
+| 0    | 0    | 0    |
+| 0    | 1    | 1    |
+| 1    | 0    | 1    |
+| 1    | 1    | 0    |
+
+Simulation:
+
+<object data="https://logickin.net/circuitjs/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxAUgoqoQFMBaMMAKABlxiUQAWMQ8Cjy9+UMQDMAhgBsAznWqR2nbjx7CwQ3urFUpchUiX9u2NLzPbhPS9wAmdKQFdpAFwbS6d8LqixWAOZWFqp4VDbcVMYIPCohIGbhllSRFCxAA" width="100%" height="500vh"></object><br>
+
+Likewise, there is an Inverted version as well, which is a XNOR gate. The output is the opposite to the XOR gate.
+
+I thought XOR gate was difficult to achieve because you may need multiple modules to make one, and I was planning for using this as the first question for my riddle; however, there is a much simpler solution which is based on a non-inverted **NOT gate**. Based on the NOT gate setting, we can find that the equation of that gate is the following:
+
+```rust,noplayground
+y = |x - 128|
+```
+
+Since the signal strength of a true signal has been defined as +128, we can cancel out the offset by a single input, causing the NOT gate to switch off. If we feed 2 true signal into a NOT gate, the calculation will be 128*2 - 128. The offset of +128 will set the gate as true state again, making it behaving like a two input XNOR gate. To convert it into an XOR gate, only an extra NOT gate is required, appended at the "NOT" gate that acts like an XNOR gate.
+
+## Conclusion
+
+That's it, this is all of the common logic gate and its implementation in SunVox. I will attach a SunVox project to demonstrate how these gates works and what is the setting of these gates:
