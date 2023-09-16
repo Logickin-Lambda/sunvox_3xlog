@@ -25,7 +25,7 @@ In Digital Logic, we also have an useful diagram, called the truth table, to sho
 
 This table shows how **AND gate** works by flicking the input one by one, with all of the combinations, so this clearly tells the **AND gate** only switches on when both input is on.
 
-That's about the truth table, let's talk the three ~~seekers~~ basic logic gates.
+That's about the truth table, let's talk the logic gates.
 
 ## AND Gate
 
@@ -170,7 +170,7 @@ Truth Table:
 
 Simulation:
 
-<object data="https://logickin.net/circuitjs/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxAUgoqoQFMBaMMAKABlxiUQAWMQ8Cjy9+UMQDMAhgBsAznWqR2nbjx7CwQ3urFUpchUiX9u2NLzPbhPS9wAmdKQFdpAFwbS6d8LqixWAOZWFqp4VDbcVMYIPCohIGbhllSRFCxAA" width="100%" height="500vh"></object><br>
+<object data="../apps/circuitjs/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxAUgoqoQFMBaMMAKABlxiUQAWMQ8Cjy9+UMQDMAhgBsAznWqR2nbjx7CwQ3urFUpchUiX9u2NLzPbhPS9wAmdKQFdpAFwbS6d8LqixWAOZWFqp4VDbcVMYIPCohIGbhllSRFCxAA" width="100%" height="500vh"></object><br>
 
 Likewise, there is an Inverted version as well, which is a XNOR gate. The output is the opposite to the XOR gate.
 
