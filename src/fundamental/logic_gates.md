@@ -155,7 +155,7 @@ As you can see, you can emulate any logic gate using NOR Gate only, due to its p
 
 <object data="../apps/circuitjs/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxAUgoqoQFMBaMMAKABkQmU8QAWQ3pzDEUfAVAkAzAIYAbAM51qkdkO4V1TERp5UqMhUqQqwhUc1EIw5jIQrWQogCZ0ZAV1kAXBrLpPwEnqwrADm4Lb2omg8VqJ6LGAI2Go8vHhUTHZpeo7UCAlJErHgDsVUcRQFyVwxvIKZFHUSlpUA7kJZ6RK8xHYq7Q0ITbTq-Sli9dapvVAsA1M64wiE8YnJVNh4ghYgm4LlRVXjex27W815LGFgESfRZ-uzpuYOJzd2dyAu7l4+fgE5GCQVgcGp8OBCbS8CE5AyKZSqMHYQg8LSiZG6KRyeHGOanE4bFGzeYfc5UaHxeYObioma4fZ4pjUvC0uyYOKInY0yFRFmBEBwoxPMx8Hjc96OPnOVzSDzeXz+CCA4JXcJsqX4SWYkyFBgzblpLUXXjQUhm80W4iVAAe4AQURIjkgyXZfEcggAcgB5AAqLFtiStyKQwkEGLdKEEXoASv67RA0la0MkeqJBJGQABBD0AERYQA" width="100%" height="500vh"></object><br><br>
 
-## NAND and NOR Gate
+## XOR and XNOR Gate
 
 I used to planned to build a XOR gate as my first question as my SunVox Logic Riddle, because it is a bit complicated compared to all other gates. How XOR gates works is similar to OR gates which the output stay on if one of the input is on; however, when both of the output is on, the output is off:
 
@@ -185,3 +185,5 @@ Since the signal strength of a true signal has been defined as +128, we can canc
 ## Conclusion
 
 That's it, this is all of the common logic gate and its implementation in SunVox. I will attach a SunVox project to demonstrate how these gates works and what is the setting of these gates:
+
+Fun fact: the coloration of the three main logic were based on the three Main Decepticon Seekers: Thundercracker as AND, Skywarp as OR, and Starscream as NOT. Why I did this was still remain a mystery because these mapping were popped out of no where. Although I am no longer interested in Transformers, most of the Legacies stay up to these days.

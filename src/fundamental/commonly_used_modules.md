@@ -42,8 +42,6 @@ Obviously, delay module is used for… well, delaying signals. It offers quite a
 
 Thanks to the inverse function, delay can also be a mono-stable circuit to send pulses to other components. In addition, the newly introduced feedback makes delay also acting as a memory storage which is handy for storing temporary data.
 
-These 6 modules are already able to make SunVox turing complete. You can use these modules only to build your computer. Obviously, there are many more modules in my computer project, I will introduces them in the later section when they are needed, to simplify the designs. Let’s only focus on these 6 modules alone in the first few chapters.
-
 ## Feedback
 ![Feedback](../images/basic_modules/Feedback.png)
 

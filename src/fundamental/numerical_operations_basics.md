@@ -6,7 +6,7 @@ Since computers are worked in binary, it make sense to build a computer with suc
 
 Let’s take a look in Amplifier, you know that you can find a DC offset option. If you move around the control, you can get a constant DC signal. That is the key of this chapter, since DC offset in amplifier has 257 steps, which is enough for representing a 8 bit integer. Hence, We can make use of this feature, to simplify some commonly used structure like adders and decoders.
 
-Here are some of the the most common mathematics and checking operation you would use in SunVox logic processing. They might sound like a joke at first, but you will find that most of the magic are just the following logic.
+Here are some of the the most basic mathematics and checking operation you would use in SunVox logic processing. They might sound like a joke at first, but you will find that most of the magic are just the following logic. There are more advance tricks as well, but this chapter will only go through the basics first.
 
 ## Addition
 
@@ -22,3 +22,53 @@ Single bit of full adder is really useless because it can only calculate number 
 
 We can build a full adder in SunVox too, but this is actually not a wise idea because we have a much simplier solution than a full adder; introducing the single amplifier, if you understand how to use amplifer to do mixing between two audio signal, you already know how to additional in SunVox because mixing audio signal is basically summing two number:
 
+![simple add](../images/numerical_operations/add_logic.png)
+
+You may argue it doesn't have any carry logic, but we will learn this for the later chapters.
+
+## Subtraction
+
+"How about subtraction?" People may ask. For the beginner level, we fcan simply using an amplifier to invert the signal by seting the **Inverse** controller to on. Since you have negated the original signal, you can minus any number by combining the negated number as shown:
+
+![simple substract](../images/numerical_operations/negation.png)
+
+## Multiplication
+
+There are two type of multiplications, the first one is static multiplication which you only need to change the gain of an amplifier to do the trick, which is not special, so I am not going to show any image about that.
+
+Nevertheless, most of the equations not just multiply over a constant only, so that is the reason why we need dynamic multiplication. To multiply any number, you need to multiply one of the input with a gain of 128, and this normalize the signal for the following modulator which is used for multiplication; thus, you will something like shown:
+
+![dynamic multiplication](../images/numerical_operations/multiply_logic.png)
+
+## Negative Detection
+
+Distortion has an interesting property when you set the bit depth to 1: If the value is less then 0, distortion generates a constant negative 128 DC signal; otherwise, distortion will not give any signal. This property is exceptionally useful, and this gives SunVox an efficient way to do conditions.
+
+![negative detector](../images/numerical_operations/negative_detection.png)
+
+
+## Naming and Coloring Standard:
+
+Unlike logic gates, coloring in numerical operations are not defined by the module type, but the equation type, and there are a few catergories:
+
+If the function is Amplifier based while it only process positive number, I normally set them to green: 
+
+![positive equations](../images/numerical_operations/amp_based_function.png)
+
+When there is an inversion, I would set it to red, since it has similar function as NOT gate, which inveres the signal
+
+![inverted equations](../images/numerical_operations/function_with_invert.png)
+
+If the module only process absolute, the color will be retained as the original color of amplifier:
+
+![abs standard](../images/numerical_operations/abs_function.png)
+
+So do multiplication and negative detection:
+
+![multiplication standard](../images/numerical_operations/multiplication_standard.png)
+
+![negative detector standard](../images/numerical_operations/negative_detector.png)
+
+## Conclusion
+
+Here we go, here are the basic numerical logic in SunVox, but you may wondering: how about division; how about geometries; how about squareroots? No worries, I will tell you about that later since they are more complicated.
