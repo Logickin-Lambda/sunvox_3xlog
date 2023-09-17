@@ -81,4 +81,4 @@ The [Inception](https://www.youtube.com/watch?v=c0Gvwo6yyyA) of SunVox. This ove
 There are lot of applications for metamodules. At first, you can use it to simplify the structure of your logic machine, making it more readable. You can reuse the metamodule by copy and paste, so you can scale a project easily with the commonly used logic. Another use for metamodule is to build a source block, that you can enable project play back to simulate input switch and clock. If this module didn't exist in the first place, VOXCOM 1610 and pong would not exist.
 
 ## Conclusion
-The rule of the modules above makes SunVox turing complete. In theory, you can compute anything only with these module, if you give it enough time and memory. Obviously, there are many more modules in my computer project; I will introduces them in the later section when they are needed.
+The rule of the modules above make SunVox turing complete. In theory, you can compute anything only with these modules if you give it enough time and memory. Obviously, there are more modules for building logical structure in a more efficient way; I will introduce them in the later section when they are needed.

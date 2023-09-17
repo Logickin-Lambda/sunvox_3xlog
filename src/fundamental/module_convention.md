@@ -44,7 +44,7 @@ Some of the labels are function specific, and I will tell you about those in the
 
 
 ## Overlapping
-This is the root of evil of an unreadable project, overlapping makes the flow of module hard if not impossible to trace. There are two types of overlapping; this first one is module overlapping which must be avoid since this not only hides all the connections, but also it is no way to tell what it does! Can you tell what is the output to this "module"?
+This is the root of evil of an unreadable project, overlapping makes the flow of module hard if not untraceable. There are two types of overlapping; this first one is module overlapping which must be avoid since this not only hides all the connections, but also it is no way to tell what it does! Can you tell what is the output to this "module"?
 
 ![singularity](../images/module_flows/singularity.png)
 

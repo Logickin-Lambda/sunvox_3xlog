@@ -12,8 +12,6 @@ Computers don't calculates math like us, using the decimal number system; under 
 
 In Digital Logic, we also have an useful diagram, called the truth table, to show how a logical component behavies under certain inputs. For example:
 
-<left>
-
 | IN A | IN B | OUT  |
 |------|------|------|
 | 0    | 0    | 0    |
@@ -21,7 +19,7 @@ In Digital Logic, we also have an useful diagram, called the truth table, to sho
 | 1    | 0    | 0    |
 | 1    | 1    | 1    |
 
-</left>
+<br>
 
 This table shows how **AND gate** works by flicking the input one by one, with all of the combinations, so this clearly tells the **AND gate** only switches on when both input is on.
 
@@ -39,6 +37,7 @@ Truth table:
 | 0    | 1    | 0    |
 | 1    | 0    | 0    |
 | 1    | 1    | 1    |
+<br>
 
 Simulation:
 
@@ -64,6 +63,7 @@ Truth table:
 | 0    | 1    | 1    |
 | 1    | 0    | 1    |
 | 1    | 1    | 1    |
+<br>
 
 Simulation:
 
@@ -77,6 +77,7 @@ Building an OR gate is as simple as an AND gate, but you need a distortion inste
 |---------------|--------| 
 | Volume        | 256    |
 | Bit depth     | 2      |
+<br>
 
 Once you have done right, the distortion will always regulate the signal into constant +128 DC, if you switch on at least one of the input. Normally, I prefer to change the color of the OR gate into purple:
 
@@ -93,6 +94,7 @@ Truth table:
 |------|------|
 | 0    | 1    |
 | 1    | 0    |
+<br>
 
 Simulation:
 
@@ -110,6 +112,7 @@ The first type is a non-inverted NOT gate, where the input signal is a +128 DC o
 |---------------|--------| 
 | DC Offset     | -128   |
 | Absolute      | ON     |
+<br>
 
 
 Another type of inverted NOT gate, where it takes negative 128 DC offset as input, which is commonly used in zero detection.
@@ -118,6 +121,7 @@ Another type of inverted NOT gate, where it takes negative 128 DC offset as inpu
 |---------------|--------| 
 | DC Offset     | +128   |
 | Absolute      | ON     |
+<br>
 
 
 I generally prefer NOT gates in red color.
@@ -136,6 +140,7 @@ Truth table and simulation of a NOR gate:
 | 0    | 1    | 0    |
 | 1    | 0    | 0    |
 | 1    | 1    | 0    |
+<br>
 
 <object data="../apps/circuitjs/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxAUgoqoQFMBaMMAKABlxiUQAWMQ8Cjy9+UMQDMAhgBsAznWqR2nbjx7CwQ3urFUpchUiX9u2NLzPbhPS9wAmdKQFdpAFwbS6d8LqixWAOZWFqp4VDbcVMYI2CohIGbhllSq0KTpGZnEFCxAA" width="100%" height="500vh"></object>
 
@@ -148,6 +153,7 @@ And a NAND gate:
 | 0    | 1    | 1    |
 | 1    | 0    | 1    |
 | 1    | 1    | 0    |
+<br>
 
 <object data="../apps/circuitjs/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxAUgoqoQFMBaMMAKABlxiUQAWMQ8Cjy9+UMQDMAhgBsAznWqR2nbjx7CwQ3urFUpchUiX9u2NLzPbhPS9wAmdKQFdpAFwbS6d8LqixWAOZWFqp4VDbcVMYIEGBcISBm4ZZUqtCkGZlZxBQsQA" width="100%" height="500vh"></object>
 
@@ -167,6 +173,7 @@ Truth Table:
 | 0    | 1    | 1    |
 | 1    | 0    | 1    |
 | 1    | 1    | 0    |
+<br>
 
 Simulation:
 
@@ -176,9 +183,7 @@ Likewise, there is an Inverted version as well, which is a XNOR gate. The output
 
 I thought XOR gate was difficult to achieve because you may need multiple modules to make one, and I was planning for using this as the first question for my riddle; however, there is a much simpler solution which is based on a non-inverted **NOT gate**. Based on the NOT gate setting, we can find that the equation of that gate is the following:
 
-```rust,noplayground
-y = |x - 128|
-```
+\\( y = |x - 128| \\)
 
 Since the signal strength of a true signal has been defined as +128, we can cancel out the offset by a single input, causing the NOT gate to switch off. If we feed 2 true signal into a NOT gate, the calculation will be 128*2 - 128. The offset of +128 will set the gate as true state again, making it behaving like a two input XNOR gate. To convert it into an XOR gate, only an extra NOT gate is required, appended at the "NOT" gate that acts like an XNOR gate.
 
@@ -186,4 +191,6 @@ Since the signal strength of a true signal has been defined as +128, we can canc
 
 That's it, this is all of the common logic gate and its implementation in SunVox. I will attach a SunVox project to demonstrate how these gates works and what is the setting of these gates:
 
-Fun fact: the coloration of the three main logic were based on the three Main Decepticon Seekers: Thundercracker as AND, Skywarp as OR, and Starscream as NOT. Why I did this was still remain a mystery because these mapping were popped out of no where. Although I am no longer interested in Transformers, most of the Legacies stay up to these days.
+<br>
+
+> Fun fact: the coloration of the three main logic were based on the three Main Decepticon Seekers: Thundercracker as AND, Skywarp as OR, and Starscream as NOT. Why I did this was still remain a mystery because these mapping were appeared out of no where. Although I am no longer interested in Transformers, most of the Legacies stay up to these days.
