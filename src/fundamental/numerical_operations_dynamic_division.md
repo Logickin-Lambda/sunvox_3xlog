@@ -136,3 +136,5 @@ This is a great discovery since we have more than one way to divide a number wit
 ![newton compressor divider](../images/numerical_operations/3stage_newton_invertor_with_compressor.png)
 
 Although it has more modules than the purely compressor method, it still has lower CPU usage because of the lack of pre-multiplication (and fewer stage in the latest version), which this design is suitable for controlling signals in the Metamodule controllers.
+
+## Newton’s Method Inverter – How to
