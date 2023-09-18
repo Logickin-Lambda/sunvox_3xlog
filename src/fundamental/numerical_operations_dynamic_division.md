@@ -138,3 +138,13 @@ This is a great discovery since we have more than one way to divide a number wit
 Although it has more modules than the purely compressor method, it still has lower CPU usage because of the lack of pre-multiplication (and fewer stage in the latest version), which this design is suitable for controlling signals in the Metamodule controllers.
 
 ## Newton’s Method Inverter – How to
+
+Instead of re-inventing the module, you may use my division module in my tool kit, including waveshaper and compressor inverter. As you can see from the example above, these modules only calculate the \\( 1/x \\) for the divisor instead of divisions. To divide a number, we need to do another multiplication:
+
+![divider in action](../images/numerical_operations/division_in_action.png)
+
+To achieve number that is out of range for waveshaper inverter, we must multiply a value at the input and output. Take 4 / 0.25 as an example; this is out of range with the Inverter, so we must multiply the value before and after the inverter by a constant (256 for this example):
+
+![divider for out of range number](../images/numerical_operations/dividing-number_between_0_and_1_002.png)
+
+To make range extension more practical, you may also perform a range check when numbers have reach certain threshold by using subtraction and negative detection.
