@@ -28,4 +28,4 @@ Hence, for these problems, I decided to use my favorite guide book format, the r
 
 Despite being a former Electronic and Computer Engineering student, and currently a software developer, I might still make mistakes on my tutorial, so please help me find any mistakes and point that out on the issue tab of my repository for a correction. If you have any suggestion, please tell me about it as well, so that to further improve this tutorial.
 
-![notey](../images/memes/notey.png)
+![notey](images/memes/notey.png)
