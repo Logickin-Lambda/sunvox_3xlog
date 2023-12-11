@@ -44,17 +44,19 @@ Some of the labels are function specific, and I will tell you about those in the
 
 
 ## Overlapping
-This is the root of evil of an unreadable project, overlapping makes the flow of module hard if not untraceable. There are two types of overlapping; this first one is module overlapping which must be avoid since this not only hides all the connections, but also it is no way to tell what it does! Can you tell what is the output to this "module"?
+This is the root of evil of an unreadable project, overlapping makes the flow of module hard if not untraceable. There are two types of overlapping:
+
+The first one is overlapped modules, which must be avoid since this not only hides all the connections, but also it has no way to tell what it does! Can you tell what is the output to this "module"?
 
 ![singularity](../images/module_flows/singularity.png)
 
 No one will get this correct because it was the 2's complement implementation while every module were squeezed into a singularity. 
 
-Another type of overlapping is rather common, the link overlapping; let's look at the following image, and let's see if you can tell the difference:
+Another type of overlapping is rather common, the overlapped connections; let's look at the following image, and let's see if you can tell the difference:
 
 ![are_they_the_same](../images/module_flows/are_they_the_same.png)
 
-The answer is... Module 01 connects to module 02 and 03, while Module 04 only connects to module 06, and the module 05 doesn't connected with anything! This leads to a great confusion because there is no way to tell if there are any hidden links under the original link; nevertheless, you might be forced to stack your links to achieve a more readable, compact design in term of the module organization, and you may use some of the prepend or append label to specify the connectivity of modules like shown:
+The answer is... Module 01 connects to module 02 and 03, while Module 04 only connects to module 06, and the module 05 doesn't connected with anything! This leads to a great confusion because there is no way to tell if there are any hidden links under the original link; nevertheless, you might be forced to stack your links to achieve a more readable, compact design in term of the module organization, and you may use some of the prepend or append labels, acting as hints.
 
 ![label_example](../images/module_flows/prepended_labels.png)
 

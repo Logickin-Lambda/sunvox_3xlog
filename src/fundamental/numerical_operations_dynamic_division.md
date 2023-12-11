@@ -54,7 +54,7 @@ To find the best initial estimation, the initial estimation must not exceed 1.5 
 
 <br>
 
-On the other hand, you can’t estimate a number from 0.5, if the number you want to invert is 5 which is resulting in a 0.2 because 0.5 is 2.5 times greater than 0.2. In consequence, you will go to infinity and soar beyond the ideal range:
+On the other hand, you can’t estimate a number from 0.5, if the number you want to invert is 5 which the correct result should be 0.2 because 0.5 is 2.5 times greater than 0.2. In consequence, you will go to infinity and soar beyond the ideal range:
 
 <br>
 
@@ -78,7 +78,7 @@ That is the reason why we need a lookup table from waveshapers. To get the optim
 
 <br>
 
-The reason for the 0.75 when x = 1 is to avoid the >1.5 problem when x is between 1.5 and 2. Because we already have a lookup table of 1/x, we can not only have a relatively good initial estimation, but we also can do 8bit integer division out of the box as shown. 
+The reason for the 0.75 when x = 1 is to avoid the >1.5 problem when x is between 1.5 and 2. Because we already have a lookup table of 1/x, we can not only have a relatively good initial estimation, but we also can do 8bit integer division out of the box. (except for 1) 
 
 Now we can apply the Newton’s method as shown:
 

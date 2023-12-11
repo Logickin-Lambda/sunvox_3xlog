@@ -187,10 +187,20 @@ I thought XOR gate was difficult to achieve because you may need multiple module
 
 Since the signal strength of a true signal has been defined as +128, we can cancel out the offset by a single input, causing the NOT gate to switch off. If we feed 2 true signal into a NOT gate, the calculation will be 128*2 - 128. The offset of +128 will set the gate as true state again, making it behaving like a two input XNOR gate. To convert it into an XOR gate, only an extra NOT gate is required, appended at the "NOT" gate that acts like an XNOR gate.
 
+## DeMorgan’s Theorem
+
+"There are way too many gates now, how can I remember them all?" Seems there are quite a few of logic gate to remember, but if you look closely, you can see there are some commonalities to one another, which is the use of NOT gate at the input and output. In fact, we can convert most of the logic gate into another, by wrapping NOT gate at the I/Os, known as DeMorgan’s Theorem.
+
+Take and AND gate as an example; if you invert all the inputs and output, you will get an OR gate as shown:
+
+<object data="../apps/circuitjs/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxAUgoqoQFMBaMMAKDEpBQUJABYwe2bD348qKagjYIJXEcUHC+CqJ1VSAkuGITecTtz76qMJJu27ssw7yurTFFlqEiBRqqPvQzbQrv2evIS8fG4SACZ0AGYAhgCuADYALgwJdOHg9lCwrAL+HipBIbwqEdHxyanpmSbZkKwA7iAuyiIBKpAsTXJ8eFQCHn1QXRbu4IQexiMDYzO8Q53dhghgEmA6FKvDTeuWaxsrEovjg-0oeL0m0wdbqxeHwwDmfMGhIkOeV89FrZe-VwAZcDnP6FBaqWIJADOdGonSBd02EhUD1qkJhcJYQA" width="100%" height="500vh"></object><br>
+
+Likewise, it also applies to other gates.
+
 ## Conclusion
 
 That's it, this is all of the common logic gate and its implementation in SunVox. I will attach a SunVox project to demonstrate how these gates works and what is the setting of these gates:
 
 <br>
 
-> Fun fact: the coloration of the three main logic were based on the three Main Decepticon Seekers: Thundercracker as AND, Skywarp as OR, and Starscream as NOT. Why I did this was still remain a mystery because these mapping were appeared out of no where. Although I am no longer interested in Transformers, most of the Legacies stay up to these days.
+> Fun fact: the coloration of the three main logic gates were based on the three Main Decepticon Seekers: Thundercracker as AND, Skywarp as OR, and Starscream as NOT. Why I did this is still remain a mystery because these mapping were appeared out of no where. I don't think I am a fan of Transformers anymore, but most of the Legacies stay up to these days, acting as a rule of thumbs and shortcuts for analyzing things.

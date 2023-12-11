@@ -40,6 +40,8 @@ You must align the delay time with the period of your pulse. If the input pulse 
 
 ![mono stable](../images/delay_based_operations/pulse_extender.gif)
 
+> Side Note: Due to 2.1.1 update, Modulator can also delay a signal with a maximum of 4 seconds, meaning that you can create structure above with dynamic delay time without using sound2ctl which is suitable for more precise and complex timing applications. 
+
 ## Conclusion
 
-Here we go, now you know the two common uses for delay modules, besides simply delaying signal. You we see this module in the following chapters for more advance usages.
+Here we go, now you know the two common uses for delay modules, besides simply delaying signal. You we see this module in the following chapters for more advance usages. For now, let we move on to the more complex stuff, some common combinational structures.
