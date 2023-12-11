@@ -1,5 +1,8 @@
 # Numerical Operations – Trigonometry
 
+> This is the extension of the previous chapter and they might contains advance concepts; if you feel overwhelmed, please move on to other chapters first and goes back to this chapter once you are ready.
+
+
 ## Overview
 
 Trigonometry functions are commonly used for splitting a vector into x and y directions, finding the length of a certain side of a triangle given an angle, or calculating or modeling any equations that have a oscillation. Similar to division, it also requires waveshaper to do the tricks.
@@ -23,7 +26,7 @@ We can make cosine from sine by introducing a bit of offset, because you may con
 ![sine simple](../images/numerical_operations/sine_to_cosine.png)
 
 ## Tangent
-"So how about tangent?" people might ask. Tangent is a bit more complicated because introduces infinity for every π/2, so it is impossible to get the perfect result when we close to the limit, but for the general case, it is possible for get a reasonable approximation and we don't need to build another structure for that thanks to the following equation:
+"So how about tangent?" people might ask. Tangent is a bit more complicated because it introduces infinity for every π/2, so it is impossible to get the perfect result when we close to the limit, but for the general case, it is possible for getting a reasonable approximation and we don't need to build another structure for that, thanks to the following equation:
 
 <br>
 
@@ -35,5 +38,8 @@ Thus, we can use the divider to find out the value of tan like shown:
 
 ![tangent](../images/numerical_operations/tangent.png)
 
+<br>
+Since the division module have a limitation on representing infinity, the closer the input towards to π/2, the less accurate it becomes; hence, it method is only good for less precise applications like graphics.
 
-
+## Conclusion
+That's about it, here are the commonly used Trigonometry function, and we have gone through the basic sin(), cos() and ten() using waveshapers. For now, let we pause the numerical operation for awhile and introduce some other basic components.

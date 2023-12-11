@@ -8,7 +8,7 @@
 
 ### It is no longer a Myth!
 
-Introducing, The Logickin’s Logical Logbook (3xLog)! A full documentation about how to implement logic circuit using SunVox! In this tutorial, you will learn not only the SunVox implementation, but also the real world of Digital Logic, Computer Architecture, or even Computer Algorithms. We start by building simple components like the logic gates and simple arithmetic modules, for the fundamental idea of logic processing in SunVox. Then we will move on the memory circuits like latches and flip flops, to help you to build a state machine. After that, I will move on to the more complex circuit like ALU, Registers, Graphics, algorithms, etc, and a bit of story about how I build a fully functional 16bit computer, to guide you how to achieve such a complex project.
+Introducing, The Logickin’s Logical Logbook (3xLog)! A full documentation with informal wording (Don't want to make it boring) about how to implement logic circuit using SunVox! In this tutorial, you will learn not only the SunVox implementation, but also the real world of Digital Logic, Computer Architecture, or even Computer Algorithms. We start by building simple components like the logic gates and simple arithmetic modules, for the fundamental idea of logic processing in SunVox. Then we will move on the memory circuits like latches and flip flops, to help you to build a state machine. After that, I will move on to the more complex circuit like ALU, Registers, Graphics, algorithms, etc, and a bit of story about how I build a fully functional 16bit computer, to guide you how to achieve such a complex project.
 
 After this tutorial, you will have enough knowledge to build some logic circuits, from implementing some interesting behaviors for your modules, to making your own interactive game, with only using SunVox Modules.
 
@@ -28,4 +28,4 @@ Hence, for these problems, I decided to use my favorite guide book format, the r
 
 Despite being a former Electronic and Computer Engineering student, and currently a software developer, I might still make mistakes on my tutorial, so please help me find any mistakes and point that out on the issue tab of my repository for a correction. If you have any suggestion, please tell me about it as well, so that to further improve this tutorial.
 
-![notey](/src/images/memes/notey.png)
+![notey](images/memes/notey.png)

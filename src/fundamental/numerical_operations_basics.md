@@ -10,25 +10,15 @@ Here are some of the the most basic mathematics and checking operation you would
 
 ## Addition
 
-In computer, we must build a full adder to compute any given two number; full adder works with two **XOR Gate** which one of them handles the two inputs and another **XOR** handles the carry bit with the calculated result. There are **AND Gate** too for handling carry bit for the next bit. Here is the single bit of full adder:
-
-<object data="../apps/circuitjs/circuitjs.html?ctz=CQAgjCAMB0l3BWc0FwCwCY0HYEA4cEMElURTJyBTAWjDACgwE1w1WNsMRPveoeAhExYgAzGIBsPBNLSSOsgd0rCA7jy6buYyBy2QGG3fp1TtUI+PNhJlfrcqHj5rPa1vLG-p59YvFhj+YOw8-s4WjoHhVhh4eOBxIPKsYEkR9HzxbBzZGaGZIHiUhRHF4GlF9kpl1dIhitL5qQWVDQGF7YVxCREpiQn97RES9QCcOnrgEwEm05OmAf3E0ggzK5bMJQVJPQPKQiKUo+DYcgqnTYKqItxDduQzUfaHADI5YanSQaxOIABmAEMADYAZyo5Es73KG1sMiulCBYIhSEM7262Thez+SPBkMMtm4a24UUkWii3AAJlQgQBXYEAFxowKolPAAicsEYhMefCUZL53xA1LpjOZrPZfxgkEYAHMQALwA9JJiHk4GPLFRsVQkNuqgA
-" width="100%" height="500vh"></object><br>
-
-Single bit of full adder is really useless because it can only calculate number between 0 - 3 (including the carry bit), so we always cascade multiple of them to perform larger number like shown which is a 4 bit adder:
-
-<object data="../apps/circuitjs/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxAUgoqoQFMBaMMAKAEIQATOgMwEMArgBsALlBABBADQAhKQGEQAZSkAdAM6KAxgPUiA9gFsNQ-QHMAllvDNVAR1sA7ZpHuQwqx+4933nsH6+Hs5w9gGe7q4Orl6B4bFRoY4saHggKAiEIHhUACxgWTni3PzCYlSQLADuINgIKDYNuXCNUNUgzVTMTS1gGFmVNZ3g-en4IwPtqRNjaZgNg7PpGA0ZWfNtQy0ozR0tuLmbe1TYhGnDudgLU+OXq+P1aYvTB0vDi8OvL5CHi3UNp3O+zOR3+6V2wx2FXaFyubzhz1u20yxyO00e6RRGL+9WyeVyaSKOPu5wJS2JtVOHTJ2CpFNyhEOuTJDN+7TBuWIWWZ5y5bQAMpjCl0UISKuJ+EJ1HRqJVBWtWmBRa1xZLpbKWPKUdMlXNxqq+FKZUg5ULwSK5rsDUaNVqsrSsrrKQMJYb1SbNWbAeBld7re6BWbWT7zozxFQ1cbAwrOY7lbHwyBIxqCk0yUUEEq8ekuLxBKIGEI6JxwImYO4WKnqXq0pmSTmSvmRIXi6XxeXWFWec6KFmHQ282UWyWIO3YJ3CGnQ4c6x0ww1G0OiyOy+PK5Pqx0+bOEwvBwXl23w2uzL2GhnmdnoafZ+jL9Nr2eewhL-3Hzuwy+mWH31mE1+txdSppgVaZ8nWfVc1KURwxScYFX7cCeyoRcYOhECUWDJDgxQ-dyjaIA
-" width="100%" height="650vh"></object><br>
-
-We can build a full adder in SunVox too, but this is actually not a wise idea because we have a much simplier solution than a full adder; introducing the single amplifier, if you understand how to use amplifer to do mixing between two audio signal, you already know how to additional in SunVox because mixing audio signal is basically summing two number:
+Addition is common in SunVox because mixing two audio signal is already an addition; thus, we may use an amplifier with default settings to combine two values.
 
 ![simple add](../images/numerical_operations/add_logic.png)
 
-You may argue it doesn't have any carry logic, but we will learn this for the later chapters.
+There might be other features for additions as well, and will talk about that in the later sections.
 
 ## Subtraction
 
-"How about subtraction?" People may ask. For the beginner level, we fcan simply using an amplifier to invert the signal by seting the **Inverse** controller to on. Since you have negated the original signal, you can minus any number by combining the negated number as shown:
+"How about subtraction?" People may ask. For the beginner level, we can simply using an amplifier to invert the signal by seting the **Inverse** controller to on. Since you have negated the original signal, you can minus any number by combining the negated number as shown:
 
 ![simple substract](../images/numerical_operations/negation.png)
 
@@ -36,13 +26,13 @@ You may argue it doesn't have any carry logic, but we will learn this for the la
 
 There are two type of multiplications, the first one is static multiplication which you only need to change the gain of an amplifier to do the trick, which is not special, so I am not going to show any image about that.
 
-Nevertheless, most of the equations not just multiply over a constant only, so that is the reason why we need dynamic multiplication. To multiply any number, you need to multiply one of the input with a gain of 128, and this normalize the signal for the following modulator which is used for multiplication; thus, you will something like shown:
+Moreover, most of the equations don't just multiply over a constant only, so that is the reason why we need dynamic multiplication. To multiply any number, you need to multiply one of the input with a gain of 128, normlizing the signal ; thus, you will something like shown:
 
 ![dynamic multiplication](../images/numerical_operations/multiply_logic.png)
 
 ## Negative Detection
 
-Distortion has an interesting property when you set the bit depth to 1: If the value is less then 0, distortion generates a constant negative 128 DC signal; otherwise, distortion will not give any signal. This property is exceptionally useful, and this gives SunVox an efficient way to do conditions.
+Distortion has an interesting property when you set the bit depth to 1: If the value is less then 0, distortion generates a constant negative 128 DC signal; otherwise, distortion will not give any signal. This property is useful, as this gives SunVox an efficient way to do conditions.
 
 ![negative detector](../images/numerical_operations/negative_detection.png)
 
@@ -68,6 +58,8 @@ So do multiplication and negative detection:
 ![multiplication standard](../images/numerical_operations/multiplication_standard.png)
 
 ![negative detector standard](../images/numerical_operations/negative_detector.png)
+
+These are not strict rules; as long as your coloring is consistent, it is not necessarily to follow the coloring.
 
 ## Conclusion
 
