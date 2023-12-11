@@ -18,7 +18,7 @@
     - [Encoder and Decoder](./fundamental/encoder_n_decoder.md)
     - [Multiplexer and Demultiplexer](./fundamental/multiplexer_n_demultiplexer.md)
     - [Adder](./fundamental/adder.md)
-    - [Common Type Conversion](./fundamental/common_type_conversion.md)
+    - [ADC and DAC](./fundamental/common_type_conversion.md)
     - [Checkpoint A](./fundamental/checkpoint_a.md)
 
 # Memory Circuits
