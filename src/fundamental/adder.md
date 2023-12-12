@@ -1,4 +1,4 @@
-# Adder
+# Adder and Subtractor
 
 ## Overview
 
@@ -27,6 +27,10 @@ This adder works in any bases, so you can change Module 06 to trigger the carry 
 If you work on decimal system, set the volume to 20, likewise setting the volume to 32 for hexadecimal, or 24 for base-12.
 
 ## Subtractor
+
+> It is currently unavailable because the borrowing logic is a bit faulty; I will rework the structure, or thie section will be removed at worst.
+
+<!--
 Instead of carrying, borrowing is required for subtraction, which doesn't exist for digital logic due to a clever trick. 
 
 In SunVox, subtraction is done by summing two signals while one of them is inverted. Once the sum of two signal is negative, the signal trigger the negative detector for borrowing. The borrower takes 10 from the right digit, and decrease the value by one for the next subtractor. With the borrowed value, it sums with the subtraction result to return the finalized result.
@@ -35,12 +39,16 @@ In SunVox, subtraction is done by summing two signals while one of them is inver
 
 However, there is a tricky part for the most significant digit; since we can't indefinitely borrow the digits, we must end the result with the correct answer; thus we must do the following:
 
-- Result the correct negative numebr in positive
+- Result of the correct negative numebr in positive
 - Switch on a Negative indicator
 
 It is easy to switch on the negative indicator, as we can just take the reading at the last borrow out; as long as it is true, the number must be in negative. The number offset is a bit tricky though, as for the most significant digit, you need to add the amount of base - 1, while add the amount of base for other digits, for reveting the borrowing logic: 
 
 ![dec subtactor full](../images/combination_circuits/dec_subtractor_full_framed.png)
 
+The reason for the weird magic number is cased by the borrower. for example, if you subtract 0 with 11, you don't get -11, but 89. The ones is explainable, as it is borrowed from the left digit, with an extra of 10; because the most significant digit has loan a one to the following digit, it is reduced by 1, but because it has 
+
 ## Conclusion
 You have learnt how to carry and borrow number in addition and subtraction, which is convient for display and calculate very large number wihout worrying the floating point error. For the next chapter, you will learn how to covert analog signal into digital.
+-->
+
