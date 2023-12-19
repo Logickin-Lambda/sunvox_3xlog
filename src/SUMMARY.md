@@ -1,7 +1,7 @@
 # Summary
 
 [Introduction](../README.md)
-
+[How To...](./how_to.md)
 
 # Fundamental Concepts
 
@@ -29,6 +29,7 @@
     - [D Latch and Flip Flop](./memory_circuits/d_latch_and_flip_flop.md)
     - [T Flip Flop](./memory_circuits/t_flip_flop.md)
     - [Delay Based Memory](./memory_circuits/delay_based_memory.md)
+    - [Checkpoint B](./memory_circuits/checkpoint_b.md)
 
 # Graphics
 
