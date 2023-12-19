@@ -1,6 +1,6 @@
 # Summary
 
-[Introduction](../README.md)
+[Introduction](./introduction.md)
 [How To...](./how_to.md)
 
 # Fundamental Concepts
