@@ -40,17 +40,35 @@
     - [Complex Shapes With Multiplexing](./graphics/complex_shapes_with_multiplexing.md)
     - [Geometric Transformations](./graphics/geometric_transformations.md)
 
-# Integration
+# Integration 
 
-- [Integrations and Testing](./integration/integrations_and_testing.md)
+- [Integration](./integration/integration.md)
+    - [Planning Ahead](./integration/planning_ahead.md)
+    - [Flow Chart](./integration/flow_chart.md)
+    - [Block Diagrams](./integration/block_diagrams.md)
+    - [K-Map](./integration/state_machine.md)
+    - [State Machine](./integration/state_machine.md)
+    - [Example 1 - Unfair Dice](./integration/unfair_dice.md)
+    - [Example 2 - 7 Segment Display Counter](./integration/7_segment_display.md)
+    - [Example 3 - Moving Pixel by Keys](./integration/moving_pixel_by_keys.md)
+    - [Example 4 - Simple Pie Chart](./integration/simple_pie_chart.md)
+
+# Testing
+
+- [Testing](./testing_and_debugging/testing.md)
+    - [Audio Response](./testing_and_debugging/audio_response.md)
+    - [Null Test](./testing_and_debugging/null_test.md)
+    - [Step Next](./testing_and_debugging/step_next.md)
+    - [DC Signal Debugger](./testing_and_debugging/dc_debugger.md)
+
+# Algorithms
+
+- [Additional Algorithms in SunVox](./algorithms/algorithms.md)
 
 # Computer Architectures
 
 - [Computer Architectures in SunVox](./computer_architectures/computer_architectures.md)
 
-# Algorithms
-
-- [Additional Algorithms in SunVox](./algorithms/algorithms.md)
 
 # Misc
 
