@@ -200,7 +200,3 @@ Likewise, it also applies to other gates.
 ## Conclusion
 
 That's it, this is all of the common logic gate and its implementation in SunVox. I will attach a SunVox project to demonstrate how these gates works and what is the setting of these gates:
-
-<br>
-
-> Fun fact: the coloration of the three main logic gates were based on the three Main Decepticon Seekers: Thundercracker as AND, Skywarp as OR, and Starscream as NOT. Why I did this is still remain a mystery because these mapping were appeared out of no where. I don't think I am a fan of Transformers anymore, but most of the Legacies stay up to these days, acting as a rule of thumbs and shortcuts for analyzing things.

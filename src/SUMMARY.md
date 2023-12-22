@@ -36,9 +36,10 @@
 - [Graphics](./graphics/graphics.md)
     - [XY mode, points and pixels](./graphics/xy_mode_and_pixels.md)
     - [Lines and Circles](./graphics/lines_and_circles.md)
-    - [Fans and Spirals](./graphics/fans_and_spirals.md)
+    - [Arcs, Spirals and Curves](./graphics/arcs_and_spirals.md)
     - [Complex Shapes With Multiplexing](./graphics/complex_shapes_with_multiplexing.md)
     - [Geometric Transformations](./graphics/geometric_transformations.md)
+    - [Example - DVD Screensaver](./graphics/dvd_screensaver.md)
 
 # Integration 
 
