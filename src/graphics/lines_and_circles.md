@@ -14,9 +14,9 @@ To define start and end point, we need two pairs of DC input, and let the four i
 
 Once you have the four amplifiers, you need to filter the signal by channels, which all x input only allows left channel to go through, and vise versa for the y axis.
 
-To find the length of the line segment, we subtract Ax with Bx, and Ay with By; for example, if Ax = 25, and Bx = -5, the total length will be 30. With the correct magnitude, we can multiply it with the aforementioned LFO module, to get the line with a correct length and slope. 
+To find the distance of the line segment, we subtract Bx with Ax, and By with Ay; for example, if Ax = 25, and Bx = -5, the total distance will be -30 (-5-25). With the correct magnitude, we can multiply it with the aforementioned LFO module, to get the line with a correct length and slope. 
 
-Although the line is now in the correct orientation, the location is wrong, so we must add the offset from point B to plot the final result:
+Although the line is now in the correct orientation, the location is wrong, so we must add the offset from point A to plot the final result:
 
 ![game of life pixel](../images/graphics/line_over_two_points.png)
 
