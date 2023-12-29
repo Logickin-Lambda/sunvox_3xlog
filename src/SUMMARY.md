@@ -40,6 +40,8 @@
     - [Complex Shapes With Multiplexing](./graphics/complex_shapes_with_multiplexing.md)
     - [Geometric Transformations](./graphics/geometric_transformations.md)
     - [Example - DVD Screensaver](./graphics/dvd_screensaver.md)
+    - [Three-Phase Dream](./graphics/three_phase_dream.md)
+    - [Checkpoint C](./graphics/checkpoint_c.md)
 
 # Integration 
 
