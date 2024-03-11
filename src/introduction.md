@@ -1,20 +1,20 @@
 # Introduction to Logickin’s Logical Logbook
 
-### How does the my pong game work?
+### Wanna know what's behind the Pong?
 <iframe width="640" height="480" src="https://www.youtube.com/embed/iKexf55seQM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-### How about the details of VOXCOM1610?
+### Or the details of VOXCOM1610?
 <iframe width="640" height="480" src="https://www.youtube.com/embed/PifiR-AD74M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ### It is no longer a Myth!
 
-Introducing, The Logickin’s Logical Logbook (3xLog)! A full documentation with informal wording about how to implement logic circuit using SunVox! In this tutorial, you will learn not only the SunVox implementation, but also the real world of Digital Logic, Computer Architecture, or even Computer Algorithms. We start by building simple components like the logic gates and simple arithmetic modules, for the fundamental idea of logic processing in SunVox. Then we will move on the memory circuits like latches and flip flops, to help you to build a state machine. After that, I will move on to the more complex circuit like ALU, Registers, Graphics, algorithms, etc, and a bit of story about how I build a fully functional 16bit computer, to guide you how to achieve such a complex project.
+Introducing, The Logickin’s Logical Logbook (3xLog)! An informal documentation for implementing logic circuit using SunVox! In this tutorial, you will learn not only the SunVox implementation, but also the real world of Digital Logic, Computer Architecture, or even Computer Algorithms. We start by building simple components like the logic gates and simple arithmetic modules, for the fundamental idea of logic processing in SunVox. Then we will move on the memory circuits like latches and flip flops, to help you to build a state machine. After that, I will move on to the more complex circuit like ALU, Registers, Graphics, algorithms, etc, and a bit of story about how I build a fully functional 16bit computer, to guide you how to achieve such a complex project.
 
 After this tutorial, you will have enough knowledge to build some logic circuits, from implementing some interesting behaviors for your modules, to making your own interactive game, with only using SunVox Modules.
 
 I hoped that this material can makes SunVox not only a power Music Tracker, but also a fun, educational learning material for anyone who want to learning how computers work.
 
-### But... why make a remaster from the original Logbook?
+### But... why do a remaster from the original Logbook?
 
 Some might ask what happened to my original 3xLog, and why I had stopped update it for a really long time. Since the Graphic Chapter, I had a lot of struggle on writing the tutorial. 
 
@@ -24,7 +24,7 @@ The second issue is the sustainability. This logbook only works when I use my cu
 
 Hence, for these problems, I decided to use my favorite guide book format, the rust mdbook, which it provides a clean style to work with, while the markdown format can let me writing down all the SunVox knowledge within a couple of minutes, using my ide of choice. In addition, I can make a backup using any git repositories to store my logbook off-site, so that not only others can expend the book with pull-requests and fix any error with issues, but also keeping it safe from being destroyed if my blog has shutdown in various reason.
 
-### hmmm... I have found an issue
+### hmmm... I got some issue...
 
 Despite being a former Electronic and Computer Engineering student, and currently a software developer, I might still make mistakes on my tutorial, so please help me find any mistakes and point that out on the issue tab of my repository for a correction. If you have any suggestion, please tell me about it as well, so that to further improve this tutorial.
 
