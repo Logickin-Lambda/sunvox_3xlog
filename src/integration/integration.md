@@ -1,2 +1,2 @@
 # Integration
-This chapter is a bit special because all of the concepts are not new, but I want to show my thought process on how to build a complex project, using the things I have learnt during my Engineering degree. Hopefully, you will know a couple of ways to breakdown a huge project.
+This chapter is a bit special because there is no new component, but I wanna give some ideas of how to plan your SunVox project or giving some useful tools for building or analyzing your logical structure or modules.
