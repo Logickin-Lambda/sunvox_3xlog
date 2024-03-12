@@ -15,8 +15,16 @@ Drawing prototype is fast using Notebooks or tablets, but it is otherwise for cr
 
 ![Obsidian](../images/integration/obsidian.png)
 
-> Fun fact: Just got a laptop with Windows 11 recently, and I found that notepad have gotten some improvements like dark theme, tabs and caching. These great enhancements also makes notepad a good options to jot down your notes for beginners. 
+> Fun fact: Just got a laptop with Windows 11 recently, and I found that notepad have gotten some improvements like dark theme, tabs and caching. These great enhancements also makes notepad a good options to jot down your notes as beginners. 
 
 ## Diagrams Editor
 Beside hand-drawing them, you can also use some tools for create diagrams. There are a few different ways, the easiest way is to use **diagram.net**, so you can draw some common diagrams like flow charts or sequence diagrams without installing anything software. Besides, you can also install **libreoffice**, using their draw tools; however, my favorite tools is still obsidian, which it also offers **Mermaid Charts**, so you can use markdown for your diagrams.
 
+## And obviously, SunVox
+Nothing is better than using SunVox itself! When you create your logic structure, you may open a SunVox project and build a subset of the whole project; not only this can reduce the complexity for testing, but also it is easier to undo the mistake and use it in your future projects by copying them. Hence, start small, then put them together to form the complete contraption. For example, I have separated project for registers and program counter, so I can have a separated copies for my future projects:
+
+![Obsidian](../images/integration/resued_component_from_side_projects.png)
+
+
+## Conclusion
+These are some of the common tools I used for planning my projects, and I will tell you about how use some of the commonly diagrams to plan your projects, starting from flow chart.
