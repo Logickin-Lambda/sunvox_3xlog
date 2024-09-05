@@ -23,7 +23,7 @@ Beside hand-drawing them, you can also use some tools for create diagrams. There
 ## And obviously, SunVox
 Nothing is better than using SunVox itself! When you create your logic structure, you may open a SunVox project and build a subset of the whole project; not only this can reduce the complexity for testing, but also it is easier to undo the mistake and use it in your future projects by copying them. Hence, start small, then put them together to form the complete contraption. For example, I have separated project for registers and program counter, so I can have a separated copies for my future projects:
 
-![Obsidian](../images/integration/resued_component_from_side_projects.png)
+![SunVox Reused Components](../images/integration/resued_component_from_side_projects.png)
 
 
 ## Conclusion

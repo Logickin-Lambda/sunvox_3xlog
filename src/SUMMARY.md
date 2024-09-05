@@ -47,10 +47,6 @@
 
 - [Integration](./integration/integration.md)
     - [Planning Ahead](./integration/planning_ahead.md)
-    - [Flow Chart](./integration/flow_chart.md)
-    - [Block Diagrams](./integration/block_diagrams.md)
-    - [K-Map](./integration/state_machine.md)
-    - [State Machine](./integration/state_machine.md)
     - [Example 1 - Unfair Dice](./integration/unfair_dice.md)
     - [Example 2 - 7 Segment Display Counter](./integration/7_segment_display.md)
     - [Example 3 - Moving Pixel by Keys](./integration/moving_pixel_by_keys.md)
@@ -74,4 +70,4 @@
 
 
 # Misc
-
+- [References](./misc_pages/references)
