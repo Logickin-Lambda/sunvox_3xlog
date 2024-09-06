@@ -1,4 +1,4 @@
-# Logic gates
+# Logic Gates
 
 ## Overview
 

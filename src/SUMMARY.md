@@ -9,7 +9,8 @@
     - [Commonly Used Modules](./fundamental/commonly_used_modules.md)
     - [Module Conventions and Practices](./fundamental/module_convention.md)
     - [Input and clock](./fundamental/input_and_clock.md)
-    - [Logic gates](./fundamental/logic_gates.md)
+    - [Logic Gates](./fundamental/logic_gates.md)
+    - [Logic Gates - Extended](./fundamental/logic_gates_extended.md)
     - [Numerical Operations – Basics](./fundamental/numerical_operations_basics.md)
     - [Numerical Operations – Dynamic Division](./fundamental/numerical_operations_dynamic_division.md)
     - [Numerical Operations – Square Root](./fundamental/numerical_operations_square_root.md)
@@ -47,10 +48,6 @@
 
 - [Integration](./integration/integration.md)
     - [Planning Ahead](./integration/planning_ahead.md)
-    - [Flow Chart](./integration/flow_chart.md)
-    - [Block Diagrams](./integration/block_diagrams.md)
-    - [K-Map](./integration/state_machine.md)
-    - [State Machine](./integration/state_machine.md)
     - [Example 1 - Unfair Dice](./integration/unfair_dice.md)
     - [Example 2 - 7 Segment Display Counter](./integration/7_segment_display.md)
     - [Example 3 - Moving Pixel by Keys](./integration/moving_pixel_by_keys.md)
@@ -74,4 +71,4 @@
 
 
 # Misc
-
+- [References](./misc_pages/references)
