@@ -17,7 +17,7 @@ Thanks to the "bitwise and" mode in the modulator, we can squarely feed two sour
 
 ![bitwise and simple](../images/logic_gates/bitwise_and_simple.gif)
 
-As you can see, the bottom input masks out the input above, only showing the digits when they both true. This is useful when computer memory is limited because you could use that to store 8 separate indicators within a byte, and parse them using the AND operation. In SunVox, you could reduce the number of modules by 87.5% \*\* using this method compared to process the bit one by one.
+As you can see, the bottom input masks out the input above, only showing the digits when they both true. This is useful when computer memory is limited because you could use that to store 8 separate indicators within a byte, and parse them using the AND operation. In SunVox, you could reduce the number of modules by 87.5% \*\* using this method compared to process the bit one by one. (if you build a bitwise operation processing a byte)
 
 There is a catch though: Since the modulator in bitwise mode only works up to ±127 DC unit, we must ensure the input never goes beyond the limit; nevertheless, you can't simply extend the bit width by subtracting input and normalize the output by 128 DC unit because there is an edge case when both of the input is +128 and +127 DC unit respectively, ending with a wrong result:
 
@@ -33,9 +33,19 @@ With this design, because I have divided and multiplied the gain by 4, forcing t
 \*\* theoretical assumption and assume 1 bit is defined by 1 DC unit
 
 ## Bitwise XOR
-With the same principle, can can swap the modulator mode to bitwise xor:
+With the same principle, we can swap the modulator mode to bitwise xor:
 
 ![bitwise xor](../images/logic_gates/bitwise_xor.png)
 
 ## Bitwise OR
+Beyond AND and XOR, it is possible to construct other bitwise operations, but we need to find the logical expression. Since we know that OR operation means at least one of the input is true; meanwhile, AND is true if both of the input is true, while XOR is true only if one of the input is true. Because of that, we can combine both of the signal to form a bitwise OR operation:
 
+![bitwise or](../images/logic_gates/bitwise_or.png)
+
+## Bitwise NOT
+XOR gate is a versatile logic gate in SunVox; instead of feeding two individual input, all we need is to feed one of the inputs with a constant that represents all true (usually \\(2^x - 1\\) ):
+
+![bitwise not](../images/logic_gates/bitwise_not.png)
+
+## Conclusion
+With all these new features delivered in 2.1.2, we can now perform bitwise operations to manipulate individual bits of a number; in addition, we are one step closer to build the quake 3 inverse square root!

@@ -10,7 +10,7 @@ Here are some of the the most basic mathematics and checking operation you would
 
 ## Addition
 
-Addition is common in SunVox because mixing two audio signal is already an addition; thus, we may use an amplifier with default settings to combine two values.
+Addition is common in SunVox because mixing two audio signal is already an addition; thus, we may use an amplifier (or modulator in add mode, or EQ) with default settings to combine two values.
 
 ![simple add](../images/numerical_operations/add_logic.png)
 
@@ -22,11 +22,16 @@ There might be other features for additions as well, and will talk about that in
 
 ![simple substract](../images/numerical_operations/negation.png)
 
+Alternatively, since the 2.1.2 update, we can also use the subtraction mode in modulators:
+
+![mod substract](../images/numerical_operations/modulator_subtraction.png)
+
+
 ## Multiplication
 
 There are two type of multiplications, the first one is static multiplication which you only need to change the gain of an amplifier to do the trick, which is not special, so I am not going to show any image about that.
 
-Moreover, most of the equations don't just multiply over a constant only, so that is the reason why we need dynamic multiplication. To multiply any number, you need to multiply one of the input with a gain of 128, normlizing the signal ; thus, you will something like shown:
+Moreover, most of the equations don't just multiply over a constant only, so that is the reason why we need dynamic multiplication. To multiply any number, you need to multiply one of the input with a gain of 128, normalizing the signal ; thus, you will something like shown:
 
 ![dynamic multiplication](../images/numerical_operations/multiply_logic.png)
 
@@ -36,8 +41,14 @@ Distortion has an interesting property when you set the bit depth to 1: If the v
 
 ![negative detector](../images/numerical_operations/negative_detection.png)
 
+## Min / Max
 
-## Naming and Coloring Standard:
+If you want to find out the highest and lowest values given the input signal paths, modulators can accomplish the task with using "min", "max", "min abs" and "max abs". They pick up the highest/weakest signal out of all signal paths, while the abs mode only consider the magnitude of the signal.
+
+![negative detector](../images/numerical_operations/min_max.png)
+
+
+## Naming and Coloring Conventions:
 
 Unlike logic gates, coloring in numerical operations are not defined by the module type, but the equation type, and there are a few catergories:
 
@@ -45,7 +56,7 @@ If the function is Amplifier based while it only process positive number, I norm
 
 ![positive equations](../images/numerical_operations/amp_based_function.png)
 
-When there is an inversion, I would set it to red, since it has similar function as NOT gate, which inveres the signal
+When there is an inversion or subtraction, I would set it to red, since they all have the idea of opposing and negation from the inputs:
 
 ![inverted equations](../images/numerical_operations/function_with_invert.png)
 
