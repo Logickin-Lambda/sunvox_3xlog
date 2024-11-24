@@ -1,4 +1,4 @@
-# Adder and Subtractor
+# Adder With Carry
 
 ## Overview
 
@@ -26,9 +26,9 @@ This adder works in any bases, so you can change Module 06 to trigger the carry 
 
 If you work on decimal system, set the volume to 20, likewise setting the volume to 32 for hexadecimal, or 24 for base-12.
 
-## Subtractor
+<!-- ## Subtractor
 
-> It is currently unavailable because the borrowing logic is a bit faulty; I will rework the structure, or thie section will be removed at worst.
+> It is currently unavailable because the borrowing logic is a bit faulty; I will rework the structure, or thie section will be removed at worst. -->
 
 <!--
 Instead of carrying, borrowing is required for subtraction, which doesn't exist for digital logic due to a clever trick. 
@@ -52,3 +52,5 @@ The reason for the weird magic number is cased by the borrower. for example, if 
 You have learnt how to carry and borrow number in addition and subtraction, which is convient for display and calculate very large number wihout worrying the floating point error. For the next chapter, you will learn how to covert analog signal into digital.
 -->
 
+## Example Project:
+[Adder With Carry](../example_projects/fundamental/1.13-Base_10_Adder_With_Carry.sunvox)

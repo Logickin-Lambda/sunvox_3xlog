@@ -92,3 +92,6 @@ You may find it familar, and you may have seen it before. You are absolutely cor
 
 ## Conclusion
 That's about it, you have learnt how to build your own decoder and encoder for your modules, and I will tell you how to based on the similar concept to build multiplexers and de-multiplexers.
+
+## Example Project:
+[Encoder and Decoder](../example_projects/fundamental/1.11-Encoder_and_Decoder.sunvox)

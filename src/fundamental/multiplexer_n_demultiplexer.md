@@ -59,3 +59,6 @@ SunVox implementation:
 ## Conclusion
 
 Decoder is vital for digital logic since you can create other combinational circuits from expending the decoders. In the chapter, you have learn how to build multiplexer and de-multiplexer for dynamically routing the signal. After that, we will move on to other type of circuit, the fully featured adder.
+
+## Example Project:
+[Monostable and Pulse Extender](../example_projects/fundamental/1.12-Mux_and_Demux.sunvox)

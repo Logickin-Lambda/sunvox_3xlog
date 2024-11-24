@@ -1,7 +1,5 @@
 # ADC and DAC
 
-> This was the original chapter of "Common Type Conversion", and I didn't realize that I actually made DAC and ADC at that time, resulting in a weird title.
-
 ## Overview
 In some situations, it is more connivent to process data either in integer or binary form, while the input is not always the one you prefer; therefore, we need to know how to convert the data type to each others.
 
@@ -96,3 +94,6 @@ VOXCOM 1610 is even wilder, as you can see ADCs everywhere, for splitting the op
 
 ## Conclusion
 Now you know how to build ADC and DAC for you projects, and you have seen that they have many applications. For the upcoming chapters, will start to learn memory circuits, but before that, let's take a break with a checkpoint, and practice the things you have learnt.
+
+## Examples Projects:
+[ADC and DAC](../example_projects/fundamental/1.14-ADC_and_DAC.sunvox)

@@ -18,7 +18,7 @@
     - [Delay Based Component](./fundamental/delay_based_component.md)
     - [Encoder and Decoder](./fundamental/encoder_n_decoder.md)
     - [Multiplexer and Demultiplexer](./fundamental/multiplexer_n_demultiplexer.md)
-    - [Adder and Subtractor](./fundamental/adder.md)
+    - [Adder With Carry](./fundamental/adder.md)
     - [ADC and DAC](./fundamental/common_type_conversion.md)
     - [Checkpoint A](./fundamental/checkpoint_a.md)
 

@@ -43,3 +43,6 @@ Since the division module have a limitation on representing infinity, the closer
 
 ## Conclusion
 That's about it, here are the commonly used Trigonometry function, and we have gone through the basic sin(), cos() and ten() using waveshapers. For now, let we pause the numerical operation for awhile and introduce some other basic components.
+
+## Example Project:
+[Trigonometries](../example_projects/fundamental/1.9-Trigonometries.sunvox)

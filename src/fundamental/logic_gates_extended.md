@@ -49,3 +49,6 @@ XOR gate is a versatile logic gate in SunVox; instead of feeding two individual 
 
 ## Conclusion
 With all these new features delivered in 2.1.2, we can now perform bitwise operations to manipulate individual bits of a number; in addition, we are one step closer to build the quake 3 inverse square root!
+
+## Example Project:
+[Bitwise Operations](../example_projects/fundamental/1.5-Logic_Gates_bitwise.sunvox)

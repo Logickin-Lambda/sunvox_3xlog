@@ -11,7 +11,7 @@ Division has been my headache since I was messing around logic stuff in SunVox, 
 
 Take 8455 / 2 as an example; if we loop for every iterations, we ended up increasing an accumulator by 4228 times, which it takes (4228 * 20) / 1000 = 84.56s. Roughly a minute to complete a single division is horrific because not only we ended up with wasting all the time to do a simple task, but also making the machine hard to predict the run time. Thus, we must find something better.
 
-## Multiplied Divisor
+## Basic Long Division
 
 Let’s look at the first non-iterative method. Considering that we only need to divide a single bit, we only need to know a few things:
 
@@ -30,6 +30,7 @@ But... why is this have a x2 for the divisor side? This is the middle stage of t
 It works because it is basically a binary long division; if you insert 67 / 5 into the structure, it triggers stage of 8x and 4x and 1x which is 13, while the remainder 2 is shown in the remainder module. (Module 2E in the image of 8 bit division structure). It works on decimal number too since there is no quantization, so you can easily fill a equation of 10.6 / 5.3 and you can still get a two.
 
 However, this circuit has two flaws. The first problem is quite obvious that the result does not support answers with decimal point, so you cannot compute anything precise; another problem is the range of operation is narrow. Even though you can extend the number of stages to handles larger number or finer fractions, it is unrealistic that the division circuit is so huge which might consumes too much CPU power, so this implementation is not ideal yet.
+
 
 ## Newton’s Method With Waveshaper
 
@@ -148,3 +149,8 @@ To achieve number that is out of range for waveshaper inverter, we must multiply
 ![divider for out of range number](../images/numerical_operations/dividing-number_between_0_and_1_002.png)
 
 To make range extension more practical, you may also perform a range check when numbers have reach certain threshold by using subtraction and negative detection.
+
+## Example Projects:
+[Long Division](../example_projects/fundamental/1.7a-Long_Division.sunvox)</br>
+[Newton's Method](../example_projects/fundamental/1.7b-Division_By_Newton's_Method.sunvox)</br>
+[Compressor vs Waveshaper Base Newton's Method](../example_projects/fundamental/1.7c-Waveshaper_VS_Compressor.sunvox)

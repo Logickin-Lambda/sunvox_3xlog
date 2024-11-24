@@ -75,3 +75,6 @@ These are not strict rules; as long as your coloring is consistent, it is not ne
 ## Conclusion
 
 Here we go, here are the basic numerical logic in SunVox, but you may wondering: how about division; how about geometries; how about squareroots? No worries, I will tell you about that later since they are more complicated.
+
+## Example Project:
+[Basic Numerical Operations](../example_projects/fundamental/1.6-Basic_Integer_Operation.sunvox)

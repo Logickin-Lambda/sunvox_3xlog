@@ -200,3 +200,6 @@ Likewise, it also applies to other gates.
 ## Conclusion
 
 That's it, this is all of the common logic gate and its implementation in SunVox. I will attach a SunVox project to demonstrate how these gates works and what is the setting of these gates:
+
+## Example Project:
+[Logic Gates](../example_projects/fundamental/1.4-Logic_Gates.sunvox)

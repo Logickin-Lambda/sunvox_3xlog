@@ -45,3 +45,6 @@ You must align the delay time with the period of your pulse. If the input pulse 
 ## Conclusion
 
 Here we go, now you know the two common uses for delay modules, besides simply delaying signal. You we see this module in the following chapters for more advance usages. For now, let we move on to the more complex stuff, some common combinational structures.
+
+## Example Project:
+[Monostable and Pulse Extender](../example_projects/fundamental/1.10-Monostable_and_Pulse_Extender.sunvox)

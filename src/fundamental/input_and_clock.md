@@ -58,3 +58,6 @@ Once you have that amplifier, create a pattern with a length of two. Then set th
 Exit the metamodule, and set the playback of your metamodule to **on (repeat)** for clock signal, or **on (no repeat)** for pulse signal.
 
 Here we go, there are the commonly use input source for testing and powering your project, now we can move on to build your first set logic gates.
+
+## Example Project:
+[Input and Clock](../example_projects/fundamental/1.3Input_and_Clock.sunvox)
