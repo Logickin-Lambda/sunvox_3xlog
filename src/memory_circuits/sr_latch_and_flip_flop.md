@@ -67,3 +67,6 @@ Instead of trigger the memory with the level of the signal, you can convert it i
 ## Conclusion
 
 You have learnt how to build the simplest memory circuit in SunVox for storing a single state, but we can do better from that, so for the following chapters, I am going to introduce other memories and tricks to make data storage more efficient.
+
+## Example Project:
+[SR Latches and SR Flip Flop](../example_projects/memories/2.1-SR%20Latches%20and%20Flip%20Flop.sunvox)
