@@ -100,7 +100,7 @@ If everything is right, you can produce the following structure:
 
 ![t_ff_adv_ext](../images/memory_circuits/t_ff_adv_ext.png)
 
-How it works is that when you send a pulse into the input T, it plays the first two line of the internal flip flop, setting the MultiSynth into toggle mode and toggle the multisynth and the nearby generator ON and OFF. When you flick the result switch, it sends another midi signal with playing at the middle of the pattern inside the internal flip flop, temporarily removing the toggle mode and send a silent note to switch the generator OFF.
+How it works is that when you send a pulse into the input T, it plays the first two lines of the internal flip flop, setting the MultiSynth into toggle mode and toggle the multisynth and the nearby generator ON and OFF. When you flick the result switch, it sends another midi signal with playing at the middle of the pattern inside the internal flip flop, temporarily removing the toggle mode and send a silent note to switch the generator OFF.
 
 Owing to the imperfect DC signal from generator, you need a distortion to normalize the signal.
 
@@ -109,7 +109,11 @@ Owing to the imperfect DC signal from generator, you need a distortion to normal
 
 There you have it, you have learnt about how to convert a D flip flop into a T flip flop, and its more efficient variant. These flip flops alone should be enough for various of application, but I will tell you another type of memory circuits.
 
+## Example Project:
+[T Flip Flop](../example_projects/memories/2.4-T_Flip_Flops.sunvox)
 
 ### reference
 
 [^offthesky]:[offthesky - Phase controls Metamodule's project play head](https://warmplace.ru/forum/viewtopic.php?p=21653#p21653)
+
+

@@ -118,3 +118,6 @@ Keep in mind that the choice of sameple rate is important because your flip flop
 
 ## Conclusion
 We have finally know to to store a byte using D latch and D flip flop, and we can now implement a more efficient design with an aid of midi signal. For the upcoming chapter, we will see how we can use D flip flop to create another type of flip flop.
+
+## Example Project:
+[D Flip Flop](../example_projects/memories/2.3-D_Flip_Flops.sunvox)

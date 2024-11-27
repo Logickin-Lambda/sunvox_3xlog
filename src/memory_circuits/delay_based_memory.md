@@ -1,12 +1,12 @@
 # Delay Based Memory
 
 ## Overview
-Do you know anything with a delay and a feedback can be memories components? In this tutorial, I will go through some memory ideas using delay, echo and modulators.
+Do you know anything with a delay and a feedback can be memory components? In this tutorial, I will go through some memory ideas using delay, echo and modulators.
 
 ## Delay Line Memory
 Replaced by solid state ram, **Delay Line Memory** is one of the oldest data storage, developed in 1949 for EDSAC[^edsac]. How it works is that a signal is sent through a medium and the signal is detected by the receiver, while the receiver also connects to back to the medium, forming a feedback loop. Thus, using the timing difference of the pulse, we can access the data in a sequential way[^h_dllm_w]. 
 
-There are type of delay memories:
+There are a few types of delay memories:
 
 ### Interal Feedback
 Delay is the most common way to build a memory, using the feedback function:
@@ -68,7 +68,7 @@ Due to the sampling offset, the delay line might not be as clean as velocity bas
 ## Accumulator (aka i++)
 Besides audio or continuous signal, you may store a constant DC signal within a precise time. The simplest form of delay based DC storage is an accumulator, which it stores a stackable constant DC signal. 
 
-To build an accumulator, you only need a delay modules (or echo) with a Monostable. The timing of the monostable must be align with the delay time of the delay block; for example, if your delay module have a timing of 1 tick, your monostable circuit must be in 1 tick; otherwise, you may get some unwanted noise due to the imperfect timing. If you have memory cells insides a metamodule, make sure that the tempo is aligned with the master project.
+To build an accumulator, you only need a delay modules (or echo) with a Monostable. The timing of the monostable must be aligned with the delay time of the delay block; for example, if your delay module have a timing of 1 tick, your monostable circuit must be in 1 tick; otherwise, you may get some unwanted noise due to the imperfect timing. If you have memory cells insides a metamodule, make sure that the tempo is aligned with the master project.
 
 ![delay memory cell](../images/memory_circuits/delay_memory_cell.png)
 
@@ -103,6 +103,10 @@ This was used for overriding with the flashing arrows for a short amount of time
 That's about all of my delay type module based memory, and you have also learnt the application behind these memories. For now, let's take a break because I will tell you about something different for the upcoming section.
 
 
+## Example Projects:
+[Delay Line Memory](../example_projects/memories/2.5a-Delay_Line_Basics.sunvox) </br>
+[Simple Timer and D FLip Flop](../example_projects/memories/2.5b-Time_and_D_Flip_Flop.sunvox) </br>
+[Counter](../example_projects/memories/2.5c-Counter.sunvox)
 
 
 ### Reference
