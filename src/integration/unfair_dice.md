@@ -88,3 +88,6 @@ As the name suggested, it is not a fair dice because it often stops at 3 and 4. 
 
 ## Conclusion
 Alright, you should able to know the thought process of how to build contraption which we first consider the logic flow of the contraption, and to breakdown the contraption into a smaller components serving for different functions. After we have completed all the individual components, we can connect each subgroup to form a bigger structure.
+
+## Example Project:
+[Three Phase Dream](../example_projects/integration/4.1-Unfair_Dice.sunvox)
