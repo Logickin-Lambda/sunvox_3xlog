@@ -33,3 +33,6 @@ To draw a circle from its center, based on a given radius, you need scale up the
 
 ## Conclusion
 You have now achieved on drawing your first line and circle! For the next chapter, we will expend the concept from circles and line, to make some other shapes.
+
+## Example Project:
+[Draw a line given two points](../example_projects/graphics/3.2-Draw_a_line_with_given_two_points.sunvox)

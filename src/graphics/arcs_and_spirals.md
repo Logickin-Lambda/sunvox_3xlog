@@ -43,3 +43,6 @@ Waveshaper also comes in handly if you want to draw a wild looking curve, by sim
 
 ## Conclusion
 That's about it; as you can see, there are a lot ways to play with curves and to make complex pattens only using LFOs, Amplifiers, Modulators and Waveshapers, go ahead to messing around with different modules, to see if you can get something wilder. For the upcoming chapter, I will add another level of complexity by introduce the terms: Multiplexing
+
+## Example Project:
+[Curves and Spirals](../example_projects/graphics/3.3-Curves_and_spirals.sunvox)

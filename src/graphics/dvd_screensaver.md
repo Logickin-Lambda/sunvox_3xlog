@@ -46,4 +46,7 @@ Once you have done, wrap it as a metamodule and you are good to go.
 
 You have now understand how to build a DVD screensaver with the knowledge you have gain from the previous chapter; for the next chapter, let me take that into the next level.
 
+## Example Project:
+[Multiplexing](../example_projects/graphics/3.6-DVD_Screensaver.sunvox)
+
 

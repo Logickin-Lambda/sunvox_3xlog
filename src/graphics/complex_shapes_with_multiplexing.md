@@ -110,6 +110,9 @@ This can be problematic since you may need to find the sweet spot for each gener
 ## Conclusion
 What a journary! We have finally made it to the end of this chapter about doing multiplexing for drawing a more complex shape; for the following chapter, we are going to mess around with the geometric transfomrations.
 
+## Example Project:
+[Multiplexing](../example_projects/graphics/3.4-Multiplexing.sunvox)
+
 ### Reference
 
 [^tv_resolution]:[TYPITO - List of TV Resolutions](https://typito.com/blog/video-resolutions/)

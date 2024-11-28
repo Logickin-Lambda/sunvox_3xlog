@@ -131,4 +131,7 @@ You have completed the animation! Although it is far from ideal, compared to the
 ![Mehdi](../images/graphics/medhi_three_phase_dream.gif)
 
 ## Conclusion
-Congrats! You have now complete yourself of three-phase dream! It is a great achievement because you have applied all the knowledge from the previous chapter to do this animation! For the next section, let me discuss some thought process on building something complex
+Alright, we have pushed the limit of the SunVox Oscilloscope to draw the three phase dream animations, applied all the techniques we have learnt. For the next section, let me discuss some thought process on building something complex
+
+## Example Project:
+[Multiplexing](../example_projects/graphics/3.7-Medhi_Three_Phase_Dream.sunvox)
