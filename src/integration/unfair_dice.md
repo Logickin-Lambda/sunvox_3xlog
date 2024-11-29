@@ -86,6 +86,8 @@ That's about it! if you press the signal input module, the module triggers SR la
 
 As the name suggested, it is not a fair dice because it often stops at 3 and 4. To make a better randomizer, we could calculate the remainder of a larger number, but that will be another story since that is far more complex than the current design.
 
+> Fun fact: I was so lucky to roll a 6 in the screen recording, and this was the first time and the only time I have ever rolled 6 with this dice.
+
 ## Conclusion
 Alright, you should able to know the thought process of how to build contraption which we first consider the logic flow of the contraption, and to breakdown the contraption into a smaller components serving for different functions. After we have completed all the individual components, we can connect each subgroup to form a bigger structure.
 

@@ -61,9 +61,12 @@
     - [Step Next](./testing_and_debugging/step_next.md)
     - [DC Signal Debugger](./testing_and_debugging/dc_debugger.md)
 
-# Algorithms
+# Algorithms And Useful Functions
 
 - [Additional Algorithms in SunVox](./algorithms/algorithms.md)
+    - [Sorting](./algorithms/sorting.md)
+    - [Serialization and Deserialization](./algorithms/sorting.md)
+    - [Facade](./algorithms/sorting.md)
 
 # Computer Architectures
 
