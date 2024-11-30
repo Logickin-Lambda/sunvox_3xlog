@@ -50,7 +50,7 @@
     - [Planning Ahead](./integration/planning_ahead.md)
     - [Example 1 - Unfair Dice](./integration/unfair_dice.md)
     - [Example 2 - 7 Segment Display Counter](./integration/7_segment_display.md)
-    - [Example 3 - Moving Pixel by Keys](./integration/moving_pixel_by_keys.md)
+    - [Example 3 - Plotting N Sides Polygon](./integration/polygon_plotter.md)
     - [Example 4 - Simple Pie Chart](./integration/simple_pie_chart.md)
 
 # Testing

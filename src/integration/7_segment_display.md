@@ -72,7 +72,7 @@ To build a 7 segment display, we start by using a LFO playing in saw wave, but b
 
 ![counter 7 seg source](../images/integration/counter_7_seg_source.png)
 
-This already covers the middle horizontal line and the top left segment. To construct the remaining segments, we need to do translation once again, and since LFO generate a signal ranging from 0 and 128 DC unit, we can just move the segments horizontally or vertically by 128 DC unit. The following mapping is based on a standard 7 segment display which segment A starts at the top, traveling all other segments in clockwise, and end with Segment G which is the middle horizontal line:
+This already covers the middle horizontal line and the top left segment. To construct the remaining segments, we need to do translation once again, and since LFO generate a signal ranging from 0 and 128 DC unit, we can just move the segments horizontally or vertically by 128 DC unit. The following mapping is based on a standard 7 segment display which segment A starts at the top, traveling all other segments in clockwise, and end with Segment G which is the middle horizontal line. In the following example, I have used a "Rom" module for translating the shape into different location, and they are basically just DC offset control from amplifier but controlling left and right channals individually. You may find the Rom module in the Memory toolkit (Rom -128-128):
 
 ![counter 7 seg segments](../images/integration/counter_7_seg_segments.png)
 
@@ -104,7 +104,7 @@ Once you have the correct mapping, you should able to print a number by changing
 And that's about it, this is how we can build a 7 segment display in SunVox.
 
 ## Connects Everything and Display Double Digit
-"We have built a 7 segment display, but... there is only one digit. How can we print two digits at the same time?" you might ask. It is not wrong that duplicate the 7 segment display is a solution, but this is hugely inefficient; thus, I normally do another multiplexing to quickly switch the numerical value and the position of the digits (The roms are just a DC offset generator that has indenpendent control for each channel which you can find in the Memory Toolkit (Rom -128-128)):
+"We have built a 7 segment display, but... there is only one digit. How can we print two digits at the same time?" you might ask. It is not wrong that duplicate the 7 segment display is a solution, but this is hugely inefficient; thus, I normally do another multiplexing to quickly switch the numerical value and the position of the digits:
 
 ![counter mux on digits and their positions](../images/integration/counter_digit_pos_mux.png)
 
