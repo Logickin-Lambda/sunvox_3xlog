@@ -134,7 +134,30 @@ With the controller, connect the transistors based aligning to the functionality
 If you have done correctly, after pressing the edit button, you can see the navigation system update the first memory cell, and if you press the add button will update the second memory cell and so on. Pressing the delete button will clear the the most recently added memory cell and the counter moves back to the previous memory cell for editing.
 
 ## Boundary Check For The Navigation
+For all the control logic, one problem remains. If you hold one of the navigation buttons too long, the cursor location will go outside of the oscilloscope, and it is easy to get lost if both of the coordination are outside the range; thus, to solve the issue, we need to apply a boundary check which is similar to what we have done for the stack, except that it need to explicitly handle both channels.
 
+In this example, let we set the boundary as:
+- ±200 for horizontal direction
+- ±128 for vertical direction
+
+After that we need to split the memory cell into left and right channel, using an amplifier extracting one of the channel and centralize the signal by setting the stereo width to 0. Because setting stereo width averages the power of both channel while we have nothing to their opposite channel, the volume is reduced by half, so we need to double the gain to properly extract a channel into a mono signal path:
+
+![controller mapping to the stack memory](../images/integration/poly_coordination_bound_check.png)
+
+After we have the bound check, we can group all the transistors at the output of the the memory cells and connect the grouped signal to the bound check:
+
+![controller mapping to the stack memory](../images/integration/poly_bound_check_connection.gif)
+
+After we have the four indicators, we can insert additional four transistors after input triggers so that when the cursor gets out of bound, it cut the input of the specific direction, and since we want our four input On by default, each additional transistor needs a not gate:
+
+![controller mapping to the stack memory](../images/integration/poly_control_addidtional_transistors.png)
+
+Finally, connect the boundary indicator based on the direction of the control, and we have completed all of the control logic.
+
+![controller mapping to the stack memory](../images/integration/poly_control_movement_limit.png)
+
+## And Finally, All the graphical Componets
+We are halfway through the whole project by completing all the control circuit. In the following part, it is all about graphical components.
 
 
 ### References
