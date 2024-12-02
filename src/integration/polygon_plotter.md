@@ -1,5 +1,7 @@
 # Example 3 - Plotting N Sides Polygon
 
+> This chapter might contains advance concepts and it might be overwhelmingly long due to the number components; if you feel overwhelmed, you may move on to other chapters first and goes back to this chapter once you are ready.
+
 ## Overview
 In this chapter, I am going to focus more on the input and the memory storage by building a polygon plotter which can supports up to 8 sides.
 
@@ -156,8 +158,123 @@ Finally, connect the boundary indicator based on the direction of the control, a
 
 ![controller mapping to the stack memory](../images/integration/poly_control_movement_limit.png)
 
-## And Finally, All the graphical Componets
+## The graphical Components - Polygon Plotter
 We are halfway through the whole project by completing all the control circuit. In the following part, it is all about graphical components.
+
+To plot the polygon, we need to print multiple lines, so we need to print a line given two points which we may build the [structure we have learnt](../graphics/lines_and_circles.md#Line-Over-2-Points) in the graphic section as shown:
+
+![controller mapping to the stack memory](../images/integration/poly_two_line_plot.png)
+
+Due to the space concern for the screenshot, I have to mirror the structure so that the final result can fit within a single screen, but in practice, it is better to keep the input and output into the same orientation unless it is a feedback mechanism. After that, it is all multiplexing again, but we have two problems:
+
+- We need to find two points that the first point is the previous point of the second point
+- The number of points are dynamic
+
+With this two requirements, we seem to face a problem because with the multiplexing knowledge we have learnt, they all handles fix number of nodes; however, in this example, the node size are dynamic such that the last node are always links to the first node. For example: if there are three nodes, the the third node always forms a pair with the first node, and if we add two more new nodes, the last node has became the fifth node which it will pair with the first node. That means, using LFO and delay doesn't work well since you have to dynamically calculate the length of the delay and the LFO pulse and dynamically block some of the unused delay module to prevent overlapping which is complex and in accurate since is it hard to calculate the delay time based on the duty cycle of the LFO. Nevertheless, there is a more convenient way to do multiplexing dynamically. Thus, let's have a look to a Square LFO with a distortion.
+
+Remember how Negative Detector works? It sends a negative +128 DC unit if the incoming signal is negative. This works because we have set the bit depth to 1 which it has quantized the input into a 1 bit signed integer, which is either -1 and 0:
+
+![dynamic multiplexer negative detector](../images/integration/poly_graphic_dynamic_mux.gif)
+
+Likewise, if we increase the bit depth to 3 bits, the distortion will quantize it to a 3 bit integer, ranging from -4 to 3:
+
+![dynamic multiplexer distortion quantization 3bit](../images/integration/poly_graphic_dynamic_mux_3bit.gif)
+
+With the same principle, we can set the bit depth of the distortion to 8 to quantize the signal into a 8 bit signed integer which aligns to the DC offset steps size of amplifiers. With the quantization, we can feed a LFO signal regulated by a transistor, bound by the another constant DC for the maximum value of the counter:
+
+
+![dynamic multiplexer dynamic counter](../images/integration/poly_graphic_dynamic_mux_dyn_counter.gif)
+
+From the illustration above, you can observed when we increment the memory cell by one, the counter counts based on the given upper bound defined the memory cell, but there is one problem remains: How to build the second counter such that the last element always points to the first element regardless the node count. To do this, the easiest way is to split another output with another amplifier with adding 1, so the second counter is always being one higher that the first, but when the second counter reaches the maximum, it forcefully set the output to 0, bound by the index counter so that the counter can be wrap dynamically; thus, you will ended up with the following structure:
+
+![dynamic multiplexer secondary counter](../images/integration/poly_graphic_dynamic_mux_secondary_counter.gif)
+
+That's about the dynamic counter, and this is huge because instead of dynamically changing the pulse and delay length in real time which can be tedious and inaccurate, two decoders is all we need with this dynamic counter; meanwhile, although the counter vary the frequency of the counting action, since we use that for multiplexing, which it doesn't require a constant time, the problem is negatable; thus, we have successfully transform a problem into a simpler, more intuitive form. 
+
+After all, they are all about decoders, but before that, let's add a pair of transistors for each output of the stack memory cell, and group all the transistor groups into two distinct data buses so that they return two distinct selected points for the line plot:
+
+![dynamic multiplexer transistor placement](../images/integration/poly_graphic_dynamic_mux_transistor_placement.gif)
+
+For the decoders, we need two set of them, and for the sake of connectivity clarity, I build two groups of decoders in an alternating pattern as shown:
+
+![dynamic multiplexer decoder placement](../images/integration/poly_graphic_dynamic_mux_decoder.png)
+
+From that, we can now work with the counter, but since the initial condition of the contraption has one node by default, we need to add one to the transistor that set the upper bound of the counter and the bound check for second counter; thus, we will have following (the order of the counter doesn't matter for this case):
+
+
+![dynamic multiplexer dynamic counter placement](../images/integration/poly_graphic_dynamic_mux_counter_connection.png)
+
+Once the counters are set, remember the two data bus we have created earlier after we have implemented the dynamic counters? We can finally connect the output of the two buses into the line plotter. For someone who are inpatient, if you have already played around with the plotter, it already works!
+
+![dynamic multiplexer dynamic counter placement](../images/integration/poly_graphic_dynamic_mux_counter_data_bus_connection.png)
+
+## The Cursor And Validation GUI Elements
+
+Technically, we have completed the core feature of the plotter, but as the requirement has stated, we still need to implement some features that enhance the user experience (UX), building a solution that is more intuitive to use. Therefore, according to the specification, we need to build a GUI for the cursor when the contraption is in edit mode, along with a simple cross if if fails to add a new node.
+
+There are many way to make a cursor icon, but for the simplicity, I am going to make a "Sniper Scope" like element which consists a cross and a circle:
+
+![dynamic multiplexer dynamic counter placement](../images/integration/poly_graphic_cursor_element.png)
+
+The reserved space are no coincident because we may build a cross based on the existing structure with reflections:
+
+![dynamic multiplexer dynamic counter placement](../images/integration/poly_graphic_invalid_cursor_element.png)
+
+The cursors are a bit too large, taking the whole oscilloscope, so we may use another amplifier to reduce the size. After that, we need to add a logic that can detect any invalid add operations so that the cross will temporarily overwrite the cursor. To handle such case, we need to extract two signal paths where:
+
+1. if user has pressed an add operation in the edit mode
+2. if the stack has full
+
+Thus, we may extract an output where users fires an add operation signal from the entry structure, while another output from the max boundary check for the stack like shown, and use an AND gate to see if both condition are true:
+
+![dynamic multiplexer dynamic counter placement](../images/integration/poly_graphic_cursor_validation_display.png)
+
+"But why did you put an AND gate that isn't really controlled by anything?", you may wondering. That additional AND gate is to handle an edge case when the stack index reaches the maximum for the first time which it should be a valid case, but with the current set up, the validation throws an "X" even for the valid case. Therefore, we need to do additional checking before mark the user action as invalid. To solve this issue, we need an SR flip flop which the set and reset port are triggered by falling edge monostable from the user input pulse and the max boundary check respectively. To prevent the user input writing the SR flip flop multiple times, we need a feedback loop to cut the signal path if the flip flop has already been written:
+
+![dynamic multiplexer dynamic counter placement](../images/integration/poly_graphic_cursor_validation_display_edge_case.png)
+
+Once you have built the additional check, connect the input to their respective bus, and the memory block connects to the additional, unconnected transistor like shown:
+
+![dynamic multiplexer dynamic counter placement](../images/integration/poly_graphic_cursor_validation_full.png)
+
+Once you have done right, the cross overwrites the cursor if you attempt to add a new node when the stack is full.
+
+## And Finally, Putting All the Graphical Elements
+After we have completed ourselves some cursors, we can finally connect the plotter and the cursor. First of all, extend the edit indicator to the top of the project, so it will be easier to build the last rending mechanism:
+
+![dynamic multiplexer dynamic counter placement](../images/integration/poly_graphic_edit_toggle_extension.png)
+
+On top of the extension, we need to build our last multiplexer, and this multiplexer is a bit different because it is bias towards to the polygon more than the cursor because the polygon is a more complex shape:
+
+![dynamic multiplexer dynamic counter placement](../images/integration/poly_graphic_multiplexer_at_extension.png)
+
+
+
+With our final multiplexer, we can now connect our cursor with it. Since the cursor is moved by the location of the currently selected node, we may make use of the data line that tracks the cursor location to move our cursor:
+
+![dynamic multiplexer dynamic counter placement](../images/integration/poly_graphic_cursor_translation.png)
+
+Once you have extended the cursor data line, you can now connect the translated result into the multiplexer, along with the result of the polygon plotter:
+
+![dynamic multiplexer dynamic counter placement](../images/integration/poly_graphic_final_multiplexer_connection.png)
+
+And finally, give it a nice screen next to the controller:
+
+![dynamic multiplexer dynamic counter placement](../images/integration/poly_graphic_final_screen.png)
+
+## Final Result
+
+With all the things we have done, we can now enjoy the show. Simply pressing a key that corresponds to B5 to toggle the edit mode, we see a cursor which give us a clearer clue where is the current node and its location. We may move around by pressing C5, C#5, D and E for navigation. If we have settle a node, we may press C6 to add another node, and it will form a line; then a triangle, and so on until we hit octagon. If we further press the add button when the shape is an octagon, the contraption refuses to add a new node with temporary showing a cross to notify the users. To remove a node, all we need to do is to press D6, and it removes the most recently added nodes.
+
+![final product](../images/integration/poly_final_product.png)
+
+<iframe width="640" height="480" src="https://www.youtube.com/embed/fDfuuWDhJcU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+## Conclusion
+
+What a journey!!! This is definitely one of the most complicated projects so far in the logbook; in fact, this will be the most complicated chapter because it involves so much elements we have learnt or not in the previous chapters, and this chapter alone has spent me 3 full days from preparation to writing the document, with countless corrections and reworks for certain parts. 
+
+This is certainly a chapter I will revise in the future for a better clarity, but hope you can still understand how to build an input interface, a basic memory storage and some hacky tricks!
 
 
 ### References
