@@ -276,6 +276,9 @@ What a journey!!! This is definitely one of the most complicated projects so far
 
 This is certainly a chapter I will revise in the future for a better clarity, but hope you can still understand how to build an input interface, a basic memory storage and some hacky tricks!
 
+## Example Project:
+
+[N Point Polygon Plotter](../example_projects/integration/4.3-n_point_polygon_plotter.sunvox)
 
 ### References
 [^stack]: [Stack Data Structure](https://www.javatpoint.com/data-structure-stack)
